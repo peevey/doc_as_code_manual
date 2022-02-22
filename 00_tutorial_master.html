@@ -492,16 +492,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_die_überschriften_hierarchie_kontrollieren">4.2. Die Überschriften-Hierarchie kontrollieren</a></li>
 </ul>
 </li>
-<li><a href="#makrostruktur">5. Ein komplexes Dokument mit Inhaltsverzeichnis erstellen</a>
-<ul class="sectlevel2">
-<li><a href="#_ein_kopfdokument_erstellen">5.1. Ein Kopfdokument erstellen</a>
-<ul class="sectlevel3">
-<li><a href="#_globale_attribute_im_dokumentenkopf_festlegen">5.1.1. Globale Attribute im Dokumentenkopf festlegen</a></li>
-</ul>
-</li>
-<li><a href="#_das_ergebnis">5.2. Das Ergebnis</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -534,19 +524,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="../images/ms_docs.png" alt="ms docs">
+<img src="../attachements/images/ms_docs.png" alt="ms docs">
 </div>
 <div class="title">Abb. 1. Beispiel: Eine Seite der Microsoft-Dokumentation. Oben rechts sieht man den Button zum Bearbeiten der Seite.</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="../images/ms_docs_git.png" alt="ms docs git">
+<img src="../attachements/images/ms_docs_git.png" alt="ms docs git">
 </div>
 <div class="title">Abb. 2. Dieselbe Seite im GIT, wo sie theoretisch von jedem bearbeitet werden kann.</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="../images/ms_docs_git_raw.png" alt="ms docs git raw">
+<img src="../attachements/images/ms_docs_git_raw.png" alt="ms docs git raw">
 </div>
 <div class="title">Abb. 3. Dieselbe Seite <em>raw</em> im <strong>markdown</strong>-Format, einer gängigen vereinfachten Markup-Language.</div>
 </div>
@@ -1298,173 +1288,8 @@ Da <code>eiffelturm.adoc</code> und <code>eiffelturm_adresse.adoc</code> auf ein
 <p>Der <code>leveloffset</code>-Parameter ist ein sehr hilfreiches Werkzeug, wenn man die Gliederung von zusammengefügten Dokumenten kontrollieren und neu strukturieren möchte.</p>
 </div>
 <div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="makrostruktur">5. Ein komplexes Dokument mit Inhaltsverzeichnis erstellen</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Wir haben jetzt gelernt, wie wir mittels <strong>asciidoc</strong> Texte miteinander verknüpfen können. Als nächstes möchten wir nun ein etwas komplexeres Dokument erstellen und dieses mit ein paar besonderen Eigenschaften wie einem Inhaltsverzeichnis ausschmücken.</p>
-</div>
-<div class="paragraph">
-<p>Damit wir genug Material zum Zusammenfügen haben, erstellen wir zunächst ein weiteres <strong>asciidoc</strong>-Dokument und speichern es als <code>turm_von_pisa.adoc</code> ab.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="asciidoc">== Der schiefe Turm von Pisa
-Der schiefe Turm von Pisa ist das Wahrzeichen der Stadt Pisa in Italien und wegen seiner starken Neigung weltberühmt. Die Grundsteinlegung des Turms erfolgte am 9.August 1173.
-
-CAUTION: Der schiefe Turm von Pisa hat eine Gesamtneigung von ca. 4 Grad.</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In unserem Projektordner sollten wir jetzt drei <code>asciidoc</code>-Dokumente haben:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre><span class="icon"><i class="fa fa-folder"></i></span> "Mein Projekt"
-   <span class="icon"><i class="fa fa-file"></i></span> eiffelturm.adoc
-   <span class="icon"><i class="fa fa-file"></i></span> eiffelturm_adresse.adoc
-   <span class="icon"><i class="fa fa-file"></i></span> turm_von_pisa.adoc</pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ein_kopfdokument_erstellen">5.1. Ein Kopfdokument erstellen</h3>
-<div class="paragraph">
-<p>Diese Dokumente möchten wir jetzt zu einem zusammenfügen. Wir erstellen dazu jetzt noch ein weiteres <strong>asciidoc</strong>-Dokument, das den <strong>"Kopf"</strong> unseres Textes darstellen wird und mittels dem wir die Gesamtstruktur unseres Textes festlegen werden.
-Ein Kopfdokument bietet darüber hinaus den Vorteil, dass wir in ihm einige globale Attribute unseres Dokuments zentral bestimmen können.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Kopiert folgenden Text in eine neue Datei.</p>
-</li>
-<li>
-<p>Speichert die Datei unter <code>bauwerke_europas.adoc</code> ab.</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="asciidoc">= Berühmte Bauwerke Europas
-Max Mustermann &lt;max.mustermann@hiq.de&gt;
-:description: Eine Übersicht der berühmtesten Bauwerke Europas
-:toc:
-:toc-title: Inhaltsverzeichnis
-:sectnums:
-:icons: font
-
-include::eiffelturm.adoc[]
-
-&lt;&lt;&lt;
-
-include::turm_von_pisa.adoc[]</code></pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_globale_attribute_im_dokumentenkopf_festlegen">5.1.1. Globale Attribute im Dokumentenkopf festlegen</h4>
-<div class="paragraph">
-<p>Schauen wir uns die einzelnen Elemente des Kopfdokuments einmal näher an:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="asciidoc">= Berühmte Bauwerke Europas <i class="conum" data-value="1"></i><b>(1)</b>
-Max Mustermann &lt;max.mustermann@hiq.de&gt; <i class="conum" data-value="2"></i><b>(2)</b>
-:description: Eine Übersicht der berühmtesten Bauwerke Europas <i class="conum" data-value="3"></i><b>(3)</b>
-:toc: <i class="conum" data-value="4"></i><b>(4)</b>
-:toc-title: Inhaltsverzeichnis <i class="conum" data-value="5"></i><b>(5)</b>
-:sectnums: <i class="conum" data-value="6"></i><b>(6)</b>
-:icons: font <i class="conum" data-value="7"></i><b>(7)</b>
-<i class="conum" data-value="8"></i><b>(8)</b>
-include::eiffelturm.adoc[] <i class="conum" data-value="9"></i><b>(9)</b>
-
-&lt;&lt;&lt; <i class="conum" data-value="10"></i><b>(10)</b>
-
-include::turm_von_pisa.adoc[] <i class="conum" data-value="11"></i><b>(11)</b></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Das ist der Titel des Dokuments, zu erkennen an dem einfachen <code>=</code>. Ein Dokument darf immer nur <em>einen</em> Titel haben.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Unmittelbar unter dem Dokumententitel (keine Leerzeile) folgen die Attribute, diese sind grundsätzlich optional. In die erste Zeile setzen wir den Autor des Dokuments und ggfs. eine E-Mail-Adresse ein.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Unter dem Attribut <code>:description:</code> haben wir die Möglichkeit, eine Beschreibung unserer Datei anzugeben.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Mit <code>:toc:</code> geben wir an, dass unserem Dokument ein Inhaltsverzeichnis ("Table of Contents") vorangestellt werden soll.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Unter <code>:toc-title:</code> bestimmen wir, dass das Inhaltsverzeichnis als "Inhaltsverzeichnis" betitelt werden soll. Ansonsten wird standardmäßig "Table of Contents" gesetzt.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td><code>:sectnums:</code> bestimmt, dass unser Inhaltsverzeichnis nummeriert werden soll.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
-<td><code>:icons: font</code> ermöglicht u.a., dass unsere Hinweisboxen im Export mit einem Icon versehen werden.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>Die erste Leerzeile schließt den Kopf des Dokuments ab.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="9"></i><b>9</b></td>
-<td>Hier inkludieren wir die erste Datei <code>eiffelturm.adoc</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="10"></i><b>10</b></td>
-<td>Die Zeichenkette <code>&lt;&lt;&lt;</code> erzwingt einen Seitenumbruch im PDF-Format.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="11"></i><b>11</b></td>
-<td>Hier inkludieren wir unseren Text zum Turm von Pisa.</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Im Abschnitt <span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="#include">Die include-Funktion nutzen</a> haben wir ja bereits dafür gesorgt, dass das Dokument <code>eiffelturm_adresse.adoc</code> vom Dokument <code>eiffelturm.adoc</code> eingebettet wird, deswegen müssen wir die Datei hier kein weiteres mal inkludieren.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Nebenei: Die hier aufgeführten Eigenschaften sind nur einige wenige Attribute, die wir in <strong>asciidoc</strong> im Dokumentenkopf bestimmen können.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_das_ergebnis">5.2. Das Ergebnis</h3>
-<div class="paragraph">
-<p>Schauen wir mal, wie sich unsere Einstellungen auf das Endergebnis auswirken. Wir nutzen erneut <code>asccidoctor</code> und <code>asccidoctor-pdf</code>, um aus <code>bauwerke_europas.adoc</code> eine Webseite, bzw. ein PDF zu rendern.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/bauwerke_europas_html.png" alt="bauwerke europas html">
-</div>
-<div class="title">Abb. 12. <span class="icon"><i class="fa fa-thumbs-up fa-2x"></i></span> Die fertige Webseite mit interaktivem Inhaltsverzeichnis und unseren Autorinformationen</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/bauwerke_europas_pdf.png" alt="bauwerke europas pdf">
-</div>
-<div class="title">Abb. 13. <span class="icon"><i class="fa fa-thumbs-up fa-2x"></i></span> Das gerenderete PDF, ebenfalls mit interaktivem Inhaltsverzeichnis und dem gewünschten Seitenumbruch.</div>
+<p>Unresolved directive in 00_tutorial_master.adoc - include::pages/kap_kopfdokument_inhaltsverzeichnis.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1473,7 +1298,7 @@ Im Abschnitt <span class="icon"><i class="fa fa-hand-o-right"></i></span> <a hre
 <div id="footer">
 <div id="footer-text">
 Version 0.2<br>
-Last updated 2022-02-22 11:30:44 +0100
+Last updated 2022-02-22 12:10:44 +0100
 </div>
 </div>
 <style>

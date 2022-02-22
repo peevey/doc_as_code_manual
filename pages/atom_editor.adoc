@@ -1,4 +1,4 @@
-:imagesdir: ../images
+:imagesdir: ../assets/images
 [#atom]
 == Der ATOM Editor
 *Asciidoc*-Dateien können wir in jedem beliebigen Plain Text Editor schreiben. Für unser Vorhaben eignet sich aber besonders der *ATOM*-Editor. Der Editor bietet zahlreiche Vorteile, bspw. können wir mit *ATOM* unsere Dokumentation in einem GIT-Repository verwalten.

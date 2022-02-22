@@ -1,4 +1,4 @@
-:imagesdir: ../images
+:imagesdir: ../assets/images
 [#syntax]
 == Die asciidoc-Syntax
 
@@ -76,11 +76,39 @@ https://hiq.de[HiQ Projects GmbH]
 . Punkt 1
 . Punkt 2
 .. Unterpunkt 2.1
+... Noch ein Unterpunkt
 ----
 
 . Punkt 1
 . Punkt 2
 .. Unterpunkt
+... Noch ein Unterpunkt
+
+[discrete]
+==== Quellcode
+[source,asciidoc]
+----
+[source,java]
+/----
+public class HelloWorld
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+}
+/----
+----
+
+[source,java]
+----
+public class HelloWorld
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+}
+----
+
 
 
 [discrete]
@@ -88,7 +116,7 @@ https://hiq.de[HiQ Projects GmbH]
 Infoboxen eignen sich, um die Aufmerksamkeit des Lesers auf besonders wichtige oder interessante Informationen zu lenken. *Asciidoc* unterstützt von Haus aus verschiedene Arten von Infoboxen, die sehr leicht zu erzeugen sind.
 Folgende Arten von Infoboxen sind möglich: `[NOTE]`, `[TIP]`, `[IMPORTANT]`, `[WARNING]` & `[CAUTION]`.
 
-[source, asciidoc]
+[source,asciidoc]
 ----
 [WARNING]
 Ein Text, auf den der Leser mittels eines Hinweis-Icons hingewiesen werden soll.

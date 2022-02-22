@@ -10,7 +10,7 @@ Alex Kurzke <alex.kurzke@hiq.de>
 :icons: font
 :source-highlighter: rouge
 :rouge-style: thankful_eyes
-:imagesdir: images
+:imagesdir: ../assets/images
 :figure-caption: Abb.
 :experimental: Yes
 //:stylesheet: style.css
@@ -22,20 +22,20 @@ Alex Kurzke <alex.kurzke@hiq.de>
 
 <<<
 
-include::pages/kap_einfuehrung.adoc[]
+include::kap_einfuehrung.adoc[]
 
 <<<
 
-include::pages/kap_tools.adoc[]
+include::kap_tools.adoc[]
 
 <<<
 
-include::pages/kap_erster_text.adoc[]
+include::kap_erster_text.adoc[]
 
 <<<
 
-include::pages/kap_modular.adoc[]
+include::kap_modular.adoc[]
 
 <<<
 
-include::pages/kap_kopfdokument_inhaltsverzeichnis.adoc[]
+include::kap_kopfdokument_inhaltsverzeichnis.adoc[]

@@ -1,4 +1,4 @@
-:imagesdir: ../images
+:imagesdir: ../assets/images
 == Modulares Arbeiten mit asciidoc
 ====
 * [x] die `include`-Funktion von *asciidoc* kennenlernen
