@@ -1,0 +1,35 @@
+[#atom]
+== Der ATOM Editor
+*Asciidoc*-Dateien können wir in jedem beliebigen Plain Text Editor schreiben. Für unser Vorhaben eignet sich aber besonders der *ATOM*-Editor. Der Editor bietet zahlreiche Vorteile, bspw. können wir mit *ATOM* unsere Dokumentation in einem GIT-Repository verwalten.
+
+Für uns zum jetztigen Zeitpunkt aber am wichtigsten: Der *ATOM*-Editor kann durch verschiedenste Packages individualisiert und an spezifische Bedürfnisse angepasst werden – darunter auch explizit für die Arbeit mit *asciidoc*.
+
+NOTE: https://atom.io
+
+=== Die Packages asciidoc-preview & language-asciidoc
+
+Sobald wir *ATOM* installiert haben, müssen wir noch die notwendigen Packages hinzufügen.
+
+Dafür öffnen wir den Package-Manager (unter "Settings") und suchen nach "asciidoc".
+
+.Der Package-Manager von *ATOM*
+image::packages.png[]
+
+Hier installieren wir mindestens die Packages `language-asciidoc` und `asciidoc-preview`.
+
+TIP: Alternativ kann auch das Package `asciidoc-assistant` installiert werden, das die wichtigsten *asciidoc*-Erweiterungen für ATOM in einem Package bündelt und `language-asciidoc` und `asciidoc-preview` bereits beinhaltet.
+
+Durch `language-asciidoc` wird die *asciidoc*-Syntax im *ATOM*-Editor farblich hervorgehoben, was die Arbeit sehr viel enfacher macht.
+
+`asciidoc-preview` wiederum erlaubt unter anderem die HTML-Vorschau von *asciidoc*-Dokumenten in *ATOM*. Sobald wir in *ATOM* eine Datei mit der Endung `.adoc` geöffnet haben, können wir uns mittels kbd:[Shift+Strg+A] bzw. kbd:[Shift+Cmd+A] die HTML-Vorschau der aktuellen Seite anzeigen lassen.
+
+Auch der Export der HTML-Datei ist möglich: Bei Rechtsklick auf die HTML-Vorschau öffnet sich ein Kontextmenü, über das wir unser Dokument mittels icon:mouse-pointer[] `Save as HTML...` exportieren können.
+
+[IMPORTANT]
+====
+Der Export nach HTML mittels `asciidoc-preview` reicht für unsere Zwecke zwar zunächst aus, präzisere Ergebnisse ereicht man aber, indem man die *asciidoc*-Dokumente direkt über die Konsole mittels `asciidoctor`, bzw. `asciidoctor-pdf` rendert. Inbesondere der Export als PDF ist über `asciidoc-preview` nicht immer zuverlässig und setzt ohnehin voraus, dass `asciidoctor-pdf` auf dem Rechner installiert ist.
+Siehe icon:hand-o-right[] <<asciidoctor>>.
+====
+
+.Syntax Highlighting via `language-asciidoc` und HTML-Preview mit `asciidoc-preview` in *ATOM*.
+image::asciidoc_preview.png[]

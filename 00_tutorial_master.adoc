@@ -1,0 +1,41 @@
+= Doc as Code-Tutorial
+Alex Kurzke <alex.kurzke@hiq.de>
+:description: Tutorial zum Erlernen der Grundzüge des "Doc as Code"-Ansatzes
+:toc: left
+:toc-title: Inhaltsverzeichnis
+:toclevels: 3
+:sectnums:
+:revnumber: 0.2
+:revremark:
+:icons: font
+:source-highlighter: rouge
+:rouge-style: thankful_eyes
+:imagesdir: images
+:figure-caption: Abb.
+:experimental: Yes
+//:stylesheet: style.css
+//:stylesdir: themes
+//:pdf-themesdir: themes
+:pdf-fontsdir: font/noto_sans;font/robotoserif;GEM_FONTS_DIR
+//:pdf-theme: pdf_theme.yml
+
+
+<<<
+
+include::kap_einfuehrung.adoc[]
+
+<<<
+
+include::kap_tools.adoc[]
+
+<<<
+
+include::kap_erster_text.adoc[]
+
+<<<
+
+include::kap_modular.adoc[]
+
+<<<
+
+include::kap_makrostruktur.adoc[]

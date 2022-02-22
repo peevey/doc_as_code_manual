@@ -1,0 +1,21 @@
+[#lektion_1]
+== Die wichtigsten Tools
+
+Im ersten Schritt wollen wir uns mit den wichtigsten Tools ausstatten, die wir für die Arbeit mit *asciidoc* benötigen.
+====
+*Die Ziele dieses Abschnitts sind:*
+
+* [x] die Syntax von *asciidoc* in Grundzügen kennenzulernen, ...
+* [x] mit *ATOM* einen geeigneten Plain Text Editor einzurichten, mit dem *asciidoc* komfortabel zu bearbeiten ist ...
+* [x] und die Textprozessoren *asciidoctor* und *asciidoctor-pdf* zu installieren, mit denen wir aus unseren *asccidoc*-Dokumenten die gewünschten Zielformate wie HTML5 oder PDF erstellen können.
+====
+
+include::asciidoc_syntax.adoc[leveloffset=+1]
+
+<<<
+
+include::atom_editor.adoc[leveloffset=+1]
+
+<<<
+
+include::asciidoctor_pdf.adoc[leveloffset=+1]

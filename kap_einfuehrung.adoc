@@ -1,0 +1,37 @@
+== Einführung
+
+Viele von euch haben es sicherlich schon bemerkt: Ruft man heutzutage eine Technische Dokumentation auf, befindet sich auf vielen Seiten ein Button, der zum Bearbeiten  der aktuellen Seite einlädt. Klickt man auf diesen, wird man in der Regel auf ein GIT-Repository verwiesen, wo  die gerade gelesene Datei nicht in unübersichtlichem HTML, sondern meist in einem einfachen und übersichtlichen Format vorliegt.
+
+Schauen wir uns einmal ein konkretes Beispiel an:
+[NOTE]
+
+https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics
+
+.Beispiel: Eine Seite der Microsoft-Dokumentation. Oben rechts sieht man den Button zum Bearbeiten der Seite.
+image::ms_docs.png[pdfwidth=85%,align=center]
+
+.Dieselbe Seite im GIT, wo sie theoretisch von jedem bearbeitet werden kann.
+image::ms_docs_git.png[pdfwidth=85%,align=center]
+
+.Dieselbe Seite _raw_ im *markdown*-Format, einer gängigen vereinfachten Markup-Language.
+image::ms_docs_git_raw.png[pdfwidth=85%,align=center]
+
+
+=== Der "Doc as Code"-Ansatz in der Technischen Dokumentation
+Was heißt das?
+
+Ganz offensichtlich sehen wir beim Aufbau der Technischen Dokumentation Parallelen zum klassischen Umgang mit Programmcode:
+
+. Die Dokumentation wird in einem GIT verwaltet und dort versioniert und kann nach den etablierten Verfahren wie Commits, Pull Requests und Reviews bearbeitet werden.
+. Die Dokumentation wird in einem Rohformat geschrieben, das in seinen Strukturen einer Programmiersprache ähnelt und unabhängig vom Ausgabeformat HTML ist.
+. Und: Die finale Dokumentation wird aus den Rohdaten bei jeder Veröffentlichung neu kompiliert, so wie ein Programm aus seinem Programmcode.
+
+Dahinter steht eine Philosophie, den man als "Doc as Code" bezeichnet: Also die Dokumentation mit den selben
+
+
+[NOTE]
+.Vertiefende Lektüre
+https://www.writethedocs.org/guide/docs-as-code/
+
+
+include::vereinfachte_auszeichnungssprachen.adoc[leveloffset=+1]

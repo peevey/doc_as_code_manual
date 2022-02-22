@@ -1,0 +1,109 @@
+:imagesdir: images
+== Modulares Arbeiten mit asciidoc
+====
+* [x] die `include`-Funktion von *asciidoc* kennenlernen
+* [x] ad
+====
+
+Natürlich wird eine Technische Dokumentation nie aus nur wenigen Sätzen bestehen, die auf eine einzige DIN-A-4-Seite passen. Ganz im Gegenteil, umfangreichere Dokumentationen können sich über hunderte Seiten erstrecken.
+
+Bei größeren Vorhaben sollte man daher modular arbeiten. Das heißt, seine Dokumentation nicht in einer einzigen Datei zu erstellen, sondern in sinnvolle Einheiten aufzuteilen, die einzeln viel einfacher zu warten sind.
+
+Hier kommt eine besondere Stärke von *asciidoc* ins Spiel: Die `include`-Funktion. Mit ihr können wir jedes Text-Dokument in ein *asciidoc*-Dokument einbetten und auf diese Weise aus verschiedenen Textbestandteilen unseren gewünschten Gesamttext zusammenstellen.
+
+[#include]
+=== Die include-Funktion nutzen
+
+Ein einfaches Beispiel: Nehmen wir an, wir möchten unserem kleinen Text zum Eiffelturm noch die Adresse und die Öffnungszeiten hinzufügen. Es könnte ja sein, dass wir diese Informationen später einmal an verschiedenen Stellen unseres Textes benötigen – es wäre doch sehr umständlich, dann bei jeder Veränderung der Öffnungszeiten die einzelnen Stellen jeweils einzeln anpassen zu müssen.
+
+Stattdessen erzeugen wir für die Öffnungszeiten ein eigenes Dokument.
+
+. Kopiere den unten stehenden Text.
+. Speichere ihn als `eiffelturm_adresse.adoc`
+
+[source, asciidoc]
+----
+== Adresse und Öffnungszeiten des Eiffelturms
+*Adresse:* +
+Champ de Mars +
+5 Av. Anatole France +
+75007 Paris, Frankreich
+
+*Öffnungszeiten:*
+[cols="1,1"]
+|===
+|Montag
+|09:30 - 22:30 Uhr
+|Dienstag
+|09:30 - 22:30 Uhr
+|Mittwoch
+|09:30 - 22:30 Uhr
+|Donnerstag
+|09:30 - 22:30 Uhr
+|Freitag
+|09:30 - 22:30 Uhr
+|Samstag
+|09:30 - 22:30 Uhr
+|Sonntag
+|09:30 - 22:30 Uhr
+|===
+----
+
+In unserem Projektordner haben wir jetzt zwei Dokumente:
+
+[listing,subs="normal"]
+----
+icon:folder[] "Unser Projekt"
+  icon:file[] eiffelturm.adoc
+  icon:file[] eiffelturm_adresse.adoc
+----
+
+Wir öffnen jetzt erneut das Dokument `eiffelturm.adoc` und fügen unten folgende Zeile hinzu:
+
+[source,asciidoc]
+----
+\include::eiffelturm_adresse.adoc[]
+----
+
+Wir sagen damit, dass wir an dieser Stelle das Dokument `eiffelturm_adresse.adoc` einbetten wollen.
+Dabei geben wir den Pfad zum einzubettenden Dokument relational zu der Datei ein, in die der Text inkludiert werden soll.
+Da `eiffelturm.adoc` und `eiffelturm_adresse.adoc` auf einer Ebene in unserem Projektordner liegen, reicht die Angabe des Dokumentennamens.
+
+[TIP]
+====
+Würde `eiffelturm_adresse.adoc` in einem Unterordner namens `partials` liegen, würde der Befehl wie folgt aussehen:
+
+[source,asciidoc]
+----
+\include::partials/eiffelturm_adresse.adoc[]
+----
+
+Würde das einzubettende Element in einem übergeordneten Ordner liegen, wäre die Pfadangabe wie folgt:
+
+[source,asciidoc]
+----
+\include::../eiffelturm_adresse.adoc[]
+----
+====
+
+Schauen wir uns jetzt die HTML-Preview von `eiffelturm.adoc` an:
+
+.In der Vorschau gut zu erkennen: Das Dokument mit Adresse und Öffnungszeiten wird in unseren Text zum Eiffelturm eingebettet.
+image::eiffelturm_include.png[]
+
+=== Die Überschriften-Hierarchie kontrollieren
+
+Vielleicht ist es euch schon aufgefallen: Sowohl in unserem Dokument `eiffelturm.adoc` als auch `eiffelturm_adresse.adoc` haben wir jeweils eine Überschrift erster Ordnung verwendet. Deshalb sind die Überschriften "Der Eiffelturm" und "Adresse und Öffnungszeiten des Eiffelturms" in unserem zusammengefügten Dokument auf einer Ebene. Sinnvoller wäre aber, wenn die Adresse ein Unterpunkt im Kapitel zum Eiffelturm wäre.
+
+Mit dem `leveloffset`-Parameter können wir beim Inkludieren von Dateien kontrollieren, auf welcher Hierarchieebene sich die beinhalteten Überschriften einfügen. Wir ändern unsere `include`-Funktion daher wie folgt ab.
+
+[source,asciidoc]
+----
+\include::eiffelturm_adresse.adoc[leveloffset=+1]
+----
+Durch die Angabe von `leveloffset=+1` bestimmen wir, dass alle Überschriften des eingetteten Dokuments genau eine Hierarchieebene nach unten sinken. Jetzt sieht unser HTML-Dokument wie folgt aus:
+
+.Durch Verwendung von leveloffset=+1 werden die Überschriften des eingebetteten Dokuments eine Hierachieebene abgesenkt.
+image::eiffelturm_include_leveloffset.png[]
+
+Der `leveloffset`-Parameter ist ein sehr hilfreiches Werkzeug, wenn man die Gliederung von zusammengefügten Dokumenten kontrollieren und neu strukturieren möchte.

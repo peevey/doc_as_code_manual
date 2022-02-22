@@ -1,0 +1,83 @@
+:imagesdir: images
+
+== Das erste Dokument erstellen, previewen und rendern
+
+Nachdem wir alle notwendigen Tools installiert haben, wollen wir sie natürlich direkt zur Anwendung bringen.
+
+=== Das erste asciidoc-Dokument schreiben
+
+Erstellen wir zunächst ein *asciidoc*-Dokument in *ATOM*.
+[source, asciidoc]
+----
+
+== Der Eiffelturm
+
+Der *Eiffelturm* ist ein 324 Meter hoher Turm in Paris, der zum Anlass der https://de.wikipedia.org/wiki/Weltausstellung_Paris_1889[Weltaustellung 1889] von *Gustave Eiffel* errichtet worden ist.
+
+=== Gustave Eiffel
+Gustave Eiffel war ein französischer Ingenieur.
+
+----
+
+. Erzeuge eine neue Datei in *ATOM*.
+. Kopiere den oben stehenden Text in das Dokument.
+. Speichere das Dokument als `eiffelturm.adoc`.
+
+In *ATOM* sollten wir jetzt folgendes sehen:
+
+.Die asciidoc-Syntax wird farblich hervorgehoben, sobald das Dokument anhand der Dateiendung als asciidoc zu erkennen ist.
+image::eiffelturm_atom.png[]
+
+Wie wir sehen können, wird die *asciidoc*-Syntax durch das `language-asciidoc`-Plugin farblich hervorgehoben.
+
+=== Die HTML-Preview via asciidoc-preview nutzen
+
+Jetzt möchten wir natürlich sehen, wie unser Text im HTML-Format aussehen würde. Dazu öffnen wir in *ATOM* die HTML-Preview mittels der Tastenkombination kbd:[shift+strg+a], bzw. kbd:[shift+cmd+a].
+
+.Links zu sehen: Der Text im asccidoc-Rohformat, rechts die HTML-Preview.
+image::eiffelturm_preview.png[]
+
+Wenn die Installation von `asciidoc-preview` erfolgreich war, sehen wir, wie unsere Datei als Webseite aussehen würde.
+
+TIP: Probiert doch direkt ein paar weitere Gestaltungsmöglichkeiten aus, die ihr unter icon:hand-o-right[] <<syntax>> kennengelernt habt. Bei jeder Veränderung der asccidoc-Datei links wird die Vorschau sofort aktualisiert.
+
+[#rendern]
+=== Eine Webseite via asciidoctor erzeugen
+
+Natürlich wollen wir unsere Dateien nicht nur als HTML previewen, wir wollen sie auch als HTML-Datei ablegen können. Dazu nutzen wir jetzt den `asciidoctor`-Textprozessor, den wir unter icon:hand-o-right[]<<asciidoctor>> installiert haben.
+
+. Öffnet ein Terminal.
+. Navigiert zu dem Verzeichnis, in dem die Datei `eiffelturm.adoc` liegt.
+. Führt jetzt folgenden Befehl aus:
+[source]
+asciidoctor eiffelturm.adoc
+
+`asciidoctor` erzeugt aus der *asciidoc*-Datei jetzt eine HTML-Seite und legt sie als `eiffelturm.html` im selben Verzeichnis wie die Ursprungsdatei ab.
+
+.So sollte die gerenderte HTML-Datei aussehen, wenn wir sie im Browser öffnen.
+image::eiffelturm_html.png[]
+
+TIP: Wie oben bereits erwähnt, kann die HTML-Datei auch über Rechtsklick auf die *ATOM*-Vorschau und Auswahl von `Save as HTML ...` abgespeichert werden.
+
+Voilà! Eine kleine Webseite, inklusive Formatierung und Link – und das, ohne eine einzige Zeile HTML geschrieben zu haben.
+
+=== Ein PDF via asciidoctor-pdf erzeugen
+
+Fangen wir an, das Potenzial von *asciidoc* etwas auszuschöpfen. Nehmen wir an, wir wollen lieber als PDF in Umlauf bringen, schließlich ist eine Webseite je nach Kontext nicht immer das geeignete Medium für eine Technische Dokumentation.
+
+. Öffnet dazu erneut ein Terminal.
+. Navigiert wieder zu dem Verzeichnis, in dem die Datei `eiffelturm.adoc` liegt.
+. Führt jetzt folgenden Befehl aus:
+[source]
+asciidoctor-pdf eiffelturm.adoc
+
+Jetzt generiert `asciidoctor-pdf` ein PDF-Dokument und legt dieses als `eiffelturm.pdf` ab.
+
+.So sollte das gerenderte PDF aussehen.
+image::eiffelturm_pdf.png[pdfwidth:80%]
+
+Wie ihr sehen könnt, sind auch im PDF die Formatierungen erhalten geblieben – auch der Link ist wunderbar eingebettet und funktioniert, ohne das wir nur eine einzige Anpassung an unserem Ursprungsdokument vornehmen mussten!
+
+icon:thumbs-up[] *Herzlichen Glückwunsch!*
+
+Wenn alles funktioniert hat, habt ihr gerade in wenigen Schritten eure erste Datei im *asciidoc*-Format geschrieben und daraus eine simple Webseite und ein PDF generiert. Und hoffentlich dabei auch ein Gefühl dafür bekommen, welches Potenzial in dieser Vorgehensweise liegt!

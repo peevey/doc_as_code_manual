@@ -1,0 +1,13 @@
+= Berühmte Bauwerke Europas
+Max Mustermann <max.mustermann@hiq.de>
+:description: Eine Übersicht der berühmtesten Bauwerke Europas
+:toc:
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+
+include::eiffelturm.adoc[]
+
+<<<
+
+include::turm_von_pisa.adoc[]

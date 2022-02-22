@@ -1,0 +1,99 @@
+:imagesdir: images
+
+[#makrostruktur]
+== Ein komplexes Dokument mit Inhaltsverzeichnis erstellen
+
+Wir haben jetzt gelernt, wie wir mittels *asciidoc* Texte miteinander verknüpfen können. Als nächstes möchten wir nun ein etwas komplexeres Dokument erstellen und dieses mit ein paar besonderen Eigenschaften wie einem Inhaltsverzeichnis ausschmücken.
+
+Damit wir genug Material zum Zusammenfügen haben, erstellen wir zunächst ein weiteres *asciidoc*-Dokument und speichern es als `turm_von_pisa.adoc` ab.
+
+[source, asciidoc]
+----
+== Der schiefe Turm von Pisa
+Der schiefe Turm von Pisa ist das Wahrzeichen der Stadt Pisa in Italien und wegen seiner starken Neigung weltberühmt. Die Grundsteinlegung des Turms erfolgte am 9.August 1173.
+
+CAUTION: Der schiefe Turm von Pisa hat eine Gesamtneigung von ca. 4 Grad.
+----
+
+In unserem Projektordner sollten wir jetzt drei `asciidoc`-Dokumente haben:
+
+[listing,subs="normal"]
+----
+icon:folder[] "Mein Projekt"
+   icon:file[] eiffelturm.adoc
+   icon:file[] eiffelturm_adresse.adoc
+   icon:file[] turm_von_pisa.adoc
+----
+
+=== Ein Kopfdokument erstellen
+
+Diese Dokumente möchten wir jetzt zu einem zusammenfügen. Wir erstellen dazu jetzt noch ein weiteres *asciidoc*-Dokument, das den *"Kopf"* unseres Textes darstellen wird und mittels dem wir die Gesamtstruktur unseres Textes festlegen werden.
+Ein Kopfdokument bietet darüber hinaus den Vorteil, dass wir in ihm einige globale Attribute unseres Dokuments zentral bestimmen können.
+
+. Kopiert folgenden Text in eine neue Datei.
+. Speichert die Datei unter `bauwerke_europas.adoc` ab.
+
+[source,asciidoc]
+----
+= Berühmte Bauwerke Europas
+Max Mustermann <max.mustermann@hiq.de>
+:description: Eine Übersicht der berühmtesten Bauwerke Europas
+:toc:
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+
+\include::eiffelturm.adoc[]
+
+<<<
+
+\include::turm_von_pisa.adoc[]
+----
+
+==== Globale Attribute im Dokumentenkopf festlegen
+
+Schauen wir uns die einzelnen Elemente des Kopfdokuments einmal näher an:
+
+[source,asciidoc]
+----
+= Berühmte Bauwerke Europas <.>
+Max Mustermann <max.mustermann@hiq.de> <.>
+:description: Eine Übersicht der berühmtesten Bauwerke Europas <.>
+:toc: <.>
+:toc-title: Inhaltsverzeichnis <.>
+:sectnums: <.>
+:icons: font <.>
+<.>
+include::eiffelturm.adoc[] <.>
+
+<<< <.>
+
+include::turm_von_pisa.adoc[] <.>
+----
+<.> Das ist der Titel des Dokuments, zu erkennen an dem einfachen `=`. Ein Dokument darf immer nur _einen_ Titel haben.
+<.> Unmittelbar unter dem Dokumententitel (keine Leerzeile) folgen die Attribute, diese sind grundsätzlich optional. In die erste Zeile setzen wir den Autor des Dokuments und ggfs. eine E-Mail-Adresse ein.
+<.> Unter dem Attribut `:description:` haben wir die Möglichkeit, eine Beschreibung unserer Datei anzugeben.
+<.> Mit `:toc:` geben wir an, dass unserem Dokument ein Inhaltsverzeichnis ("Table of Contents") vorangestellt werden soll.
+<.> Unter `:toc-title:` bestimmen wir, dass das Inhaltsverzeichnis als "Inhaltsverzeichnis" betitelt werden soll. Ansonsten wird standardmäßig "Table of Contents" gesetzt.
+<.> `:sectnums:` bestimmt, dass unser Inhaltsverzeichnis nummeriert werden soll.
+<.> `:icons: font` ermöglicht u.a., dass unsere Hinweisboxen im Export mit einem Icon versehen werden.
+<.> Die erste Leerzeile schließt den Kopf des Dokuments ab.
+<.> Hier inkludieren wir die erste Datei `eiffelturm.adoc`.
+<.> Die Zeichenkette `<<<` erzwingt einen Seitenumbruch im PDF-Format.
+<.> Hier inkludieren wir unseren Text zum Turm von Pisa.
+
+
+[TIP]
+Im Abschnitt icon:hand-o-right[] <<include>> haben wir ja bereits dafür gesorgt, dass das Dokument `eiffelturm_adresse.adoc` vom Dokument `eiffelturm.adoc` eingebettet wird, deswegen müssen wir die Datei hier kein weiteres mal inkludieren.
+
+Nebenei: Die hier aufgeführten Eigenschaften sind nur einige wenige Attribute, die wir in *asciidoc* im Dokumentenkopf bestimmen können.
+
+=== Das Ergebnis
+
+Schauen wir mal, wie sich unsere Einstellungen auf das Endergebnis auswirken. Wir nutzen erneut `asccidoctor` und `asccidoctor-pdf`, um aus `bauwerke_europas.adoc` eine Webseite, bzw. ein PDF zu rendern.
+
+.icon:thumbs-up[2x] Die fertige Webseite mit interaktivem Inhaltsverzeichnis und unseren Autorinformationen
+image::bauwerke_europas_html.png[]
+
+.icon:thumbs-up[2x] Das gerenderete PDF, ebenfalls mit interaktivem Inhaltsverzeichnis und dem gewünschten Seitenumbruch.
+image::bauwerke_europas_pdf.png[]

@@ -1,0 +1,24 @@
+[#asciidoctor]
+== Die Textprozessoren asciidoctor & asciidoctor-pdf
+
+*Asciidoc* ist die vereinfachte Auszeichnungssprache, mit der wir unsere Texte im Rohformat schreiben. Um aus *asciidoc*-Dokumenten die gewünschten Ausgabeformate zu rendern, benötigen wir jetzt noch die entsprechenden *Textprozessoren*.
+
+=== asciidoctor
+
+`asciidoctor` unterstützt von Haus aus die Ausgabeformate `HTML5`, `DocBook 5` und `man page`. Außerderm integriert `asciidoctor` ein Standard-Styleheet, durch das die generierten HTML-Dateien direkt in einem ansprechenden Design daherkommen und einen Syntax Highlighter, durch den Codebeispiele im HTML farblich hervorgehoben werden.
+
+Bitte folgt der Anleitung auf der folgenden Seite, um `asciidoctor` über das Terminal zu installieren.
+
+NOTE: https://docs.asciidoctor.org/asciidoctor/latest/install/
+
+=== asciidoctor-pdf
+
+`asciidoctor-pdf` ist eine Erweiterung von `asciidoctor` und erlaubt uns, auch PDF-Dateien aus unseren *asciidoc*-Dateien zu rendern. Da wir im Laufe des Tutorials sehen wollen, wie aus den selben Rohdaten verschiedene Ausgabeformate erzeugt werden können, benötigen wir auch diese Erweiterung.
+
+Bitte folgt der Anleitung auf der folgenden Seite, um `asciidoctor-pdf` über das Terminal zu installieren.
+
+NOTE: https://github.com/asciidoctor/asciidoctor-pdf/tree/main#getting-started
+
+Sobald beide Prozessoren installiert sind, können wir über das Terminal jedes beliebige *asciidoc*-Dokument in das gewünschte Zielformat konvertieren. Wir werden das im Laufe des Tutorials auch direkt ausprobieren, siehe dazu auch icon:hand-o-right[]<<rendern>>.
+
+TIP: Wenn euch die Installation der Prozessoren Probleme bereitet, könnt ihr das Tutorial auch auch ersteinmal nur mittels *ATOM* und den unter icon:hand-o-right[] <<atom>> beschriebenen Packages fortsetzen.
