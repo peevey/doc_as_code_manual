@@ -86,18 +86,7 @@ https://hiq.de[HiQ Projects GmbH]
 
 [discrete]
 ==== Quellcode
-[source,asciidoc]
-----
-[source,java]
-/----
-public class HelloWorld
-{
-	public static void main(String[] args) {
-		System.out.println("Hello World!");
-	}
-}
-/----
-----
+include::./partials/sample_java.adoc[]
 
 [source,java]
 ----
