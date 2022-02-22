@@ -1,5 +1,4 @@
 :imagesdir: images
-
 [#makrostruktur]
 == Ein komplexes Dokument mit Inhaltsverzeichnis erstellen
 

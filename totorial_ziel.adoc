@@ -1,0 +1,7 @@
+== Ziel des Tutorials
+
+
+
+[TIP]
+Auch dieses Tutorial wurde natürlich in *asciidoc* geschrieben. Die Rohdaten findet ihr im GIT-Repository:
+https://github.com/peevey/doc_as_code_manual
