@@ -1,4 +1,4 @@
-:imagesdir: images
+:imagesdir: ../images
 == Einführung
 
 Viele von euch haben es sicherlich schon bemerkt: Ruft man heutzutage eine Technische Dokumentation auf, befindet sich auf vielen Seiten ein Button, der zum Bearbeiten  der aktuellen Seite einlädt. Klickt man auf diesen, wird man in der Regel auf ein GIT-Repository verwiesen, wo  die gerade gelesene Datei nicht in unübersichtlichem HTML, sondern meist in einem einfachen und übersichtlichen Format vorliegt.
@@ -30,8 +30,6 @@ Ganz offensichtlich sehen wir beim Aufbau der Technischen Dokumentation Parallel
 Dahinter steht eine Philosophie, den man als "Doc as Code" bezeichnet. Das heißt: Schreibe deine Dokumentation mit denselben Methoden und Tools wie deinen Programmcode.
 
 Diese Vorgehensweise hat verschiedene Vorteile: Sie bringt das
-
-
 
 
 [NOTE]

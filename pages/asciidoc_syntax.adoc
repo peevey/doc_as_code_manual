@@ -1,10 +1,10 @@
-:imagesdir: images
+:imagesdir: ../images
 [#syntax]
-== Die Asciidoc-Syntax
+== Die asciidoc-Syntax
 
 Die Möglichkeiten, die *asciidoc* zur Texterstellung bietet, sind schier endlos. Um ein grundlegendes Verständnis der
 
-=== Basale Gesaltungselemente in asciidoc
+=== Basale Gestaltungselemente in asciidoc
 
 Schauen wir uns als Erstes ein paar einfache Formatierungsmöglichkeiten in *asciidoc* an.
 
@@ -51,6 +51,39 @@ _kursiv_ <.>
 <.> Das html-Äquivalent dieser Überschrift ist `<h2></h2>`, usw.
 
 [discrete]
+==== URLs und Links
+Links erzeugen wir, in dem wir sie einfach als solche in unseren Text einfügen:
+
+[source, asciidoc]
+----
+https://hiq.de
+----
+https://hiq.de
+
+Wenn wir einen bestimmten Text mit einem Link hinterlegen wollen, geht das so:
+
+[source, asciidoc]
+----
+https://hiq.de[HiQ Projects GmbH]
+----
+https://hiq.de[HiQ Projects GmbH]
+
+[discrete]
+==== Alphanumerische Listen
+
+[source,asciidoc]
+----
+. Punkt 1
+. Punkt 2
+.. Unterpunkt 2.1
+----
+
+. Punkt 1
+. Punkt 2
+.. Unterpunkt
+
+
+[discrete]
 ==== Infoboxen (Admonition Blocks)
 Infoboxen eignen sich, um die Aufmerksamkeit des Lesers auf besonders wichtige oder interessante Informationen zu lenken. *Asciidoc* unterstützt von Haus aus verschiedene Arten von Infoboxen, die sehr leicht zu erzeugen sind.
 Folgende Arten von Infoboxen sind möglich: `[NOTE]`, `[TIP]`, `[IMPORTANT]`, `[WARNING]` & `[CAUTION]`.
@@ -63,38 +96,3 @@ Ein Text, auf den der Leser mittels eines Hinweis-Icons hingewiesen werden soll.
 
 [WARNING]
 Ein Text, auf den der Leser mittels eines Warnhinweis hingewiesen werden soll.
-
-[discrete]
-==== URLs und Links
-Links erzeugen wir, in dem wir sie einfach als solche in unseren Text einfügen:
-
-[source, asciidoc]
-----
-https://hiq.de
-----
-Beispiel: https://hiq.de
-
-Wenn wir einen bestimmten Text mit einem Link hinterlegen wollen, geht das so:
-
-[source, asciidoc]
-----
-https://hiq.de[HiQ Projects GmbH]
-----
-Beispiel: https://hiq.de[HiQ Projects GmbH]
-
-=== Cheat Sheets
-Deshalb sollte man immer ein Cheat Sheet griffbereit haben, auf dem die wichtigsten Syntax-Eigenschaften von *asciidoc* verankert sind.
-
-[NOTE]
-.Cheat Sheets
-====
-https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/ +
-https://www.writethedocs.org/guide/writing/asciidoc/ +
-https://powerman.name/doc/asciidoc
-====
-
-Für die Zwecke dieses Tutorials reichen die angegeben Cheat Sheets vollkommen aus. Wer aber wirklich tief in *asciidoc* einsteigen möchte, findet eine umfängliche Dokumentation hier:
-
-NOTE: https://docs.asciidoctor.org/asciidoc/latest/
-
-<<<

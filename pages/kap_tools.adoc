@@ -14,6 +14,10 @@ include::asciidoc_syntax.adoc[leveloffset=+1]
 
 <<<
 
+include::cheat_sheets.adoc[leveloffset=+1]
+
+<<<
+
 include::atom_editor.adoc[leveloffset=+1]
 
 <<<

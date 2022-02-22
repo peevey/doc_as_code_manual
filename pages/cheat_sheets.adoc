@@ -1,0 +1,13 @@
+=== Cheat Sheets
+Deshalb sollte man immer ein Cheat Sheet griffbereit haben, auf dem die wichtigsten Syntax-Eigenschaften von *asciidoc* verankert sind.
+
+[NOTE]
+.Cheat Sheets
+====
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/ +
+https://www.writethedocs.org/guide/writing/asciidoc/ +
+====
+
+Für die Zwecke dieses Tutorials reichen die angegeben Cheat Sheets vollkommen aus. Wer aber wirklich tief in *asciidoc* einsteigen möchte, findet eine umfängliche Dokumentation hier:
+
+NOTE: https://docs.asciidoctor.org/asciidoc/latest/

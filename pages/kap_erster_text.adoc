@@ -1,4 +1,4 @@
-:imagesdir: images
+:imagesdir: ../images
 == Das erste Dokument erstellen, previewen und rendern
 
 Nachdem wir alle notwendigen Tools installiert haben, wollen wir sie natürlich direkt zur Anwendung bringen.
