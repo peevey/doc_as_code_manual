@@ -13,7 +13,7 @@ Die Kopfdatei des Tutorials ist [00_tutorial_master.adoc](pages/00_tutorial_mast
 Der Aufbau orientiert sich grob an dem bei Verwendung von *Antora* vorgesehenen standardisierten Verzeichnisaufbau. 
 https://docs.antora.org/antora/latest/standard-directories/
 
-`assets` enthält die Unterordner `images` und `attachments`. In `images` werden Bilddateien abgelegt, `attachments` ist für weitere Dateitypen vorgesehen, die bspw. zum Download-Zweck in das Dokument eingebettet werden sollen. 
+`assets` enthält den Unterordner `images`
 
 `pages` enthält die einzelnen asciidoc-Textbausteine, aus denen die Dokumentation aufgebaut ist
 
