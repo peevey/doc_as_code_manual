@@ -12,16 +12,6 @@ font:
       bold: GEM_FONTS_DIR/mplus1mn-bold-subset.ttf
       italic: GEM_FONTS_DIR/mplus1mn-italic-subset.ttf
       bold_italic: GEM_FONTS_DIR/mplus1mn-bold_italic-subset.ttf
-    Noto Sans:
-      normal: notosans-regular.ttf
-      bold: notosans-bold.ttf
-      italic: notosans-italic.ttf
-      bold_italic: notosans-bolditalic.ttf
-    Roboto Serif:
-      normal: robotoserif-light.ttf
-      bold: robotoserif-bold.ttf
-      italic: robotoserif-italic.ttf
-      bold_italic: robotoserif-extrabolditalic.ttf
 page:
   background_color: FFFFFF
   layout: portrait
@@ -35,12 +25,12 @@ base:
   align: justify
   # color as hex string (leading # is optional)
   font_color: 333333
-  font_family: Roboto Serif
   # color as RGB array
   #font_color: [51, 51, 51]
   # color as CMYK array (approximated)
   #font_color: [0, 0, 0, 0.92]
   #font_color: [0, 0, 0, 92%]
+  font_family: Noto Serif
   # choose one of these font_size/line_height_length combinations
   #font_size: 14
   #line_height_length: 20
@@ -80,15 +70,12 @@ role:
 # correct line height for Noto Serif metrics (comes with built-in line height)
 vertical_rhythm: $base_line_height_length
 horizontal_rhythm: $base_line_height_length
-# QUESTION should vertical_spacing be block_spacing instead?
-vertical_spacing: $vertical_rhythm
 link:
   font_color: 428BCA
 # literal is currently used for inline monospaced in prose and table cells
 literal:
-  font_color: 333333
+  font_color: B12146
   font_family: M+ 1mn
-  background_color: F0F0F0
 button:
   content: "[\u2009%s\u2009]"
   font_style: bold
@@ -104,7 +91,8 @@ mark:
   background_color: FFFF00
   border_offset: 1
 menu:
-  caret_content: " <font size=\"1.15em\"><color rgb=\"b12146\">\u203a</color></font> "
+  caret_content: " <font size=\"1.15em\" color=\"#B12146\">\u203a</font> "
+  font_style: bold
 heading:
   align: left
   font_color: $base_font_color
@@ -124,26 +112,29 @@ heading:
   margin_bottom: $vertical_rhythm * 0.9
   min_height_after: $base_line_height_length * 1.5
 title_page:
-  align: right
+  align: left
   logo:
     top: 10%
   title:
     top: 55%
     font_size: $heading_h1_font_size
-    font_color: 999999
+    font_color: 000000
     line_height: 0.9
   subtitle:
     font_size: $heading_h3_font_size
     font_style: bold_italic
     line_height: 1
   authors:
+    #display: none
+    content:
+      name_only: "{author}"
+      with_email: "{author} <{email}>"
     margin_top: $base_font_size * 1.25
     font_size: $base_font_size_large
     font_color: 181818
   revision:
     margin_top: $base_font_size * 1.25
 block:
-  margin_top: 0
   margin_bottom: $vertical_rhythm
 caption:
   align: left
@@ -151,7 +142,6 @@ caption:
   font_style: italic
   # FIXME perhaps set line_height instead of / in addition to margins?
   margin_inside: $vertical_rhythm / 3
-  #margin_inside: $vertical_rhythm / 4
   margin_outside: 0
 lead:
   font_size: $base_font_size_large
@@ -171,10 +161,10 @@ admonition:
   column_rule_color: $base_border_color
   column_rule_width: $base_border_width
   padding: [0, $horizontal_rhythm, 0, $horizontal_rhythm]
-  icon:
-    warning:
-      name: file-code-o
-      stroke_color: 000000
+  #icon:
+  #  tip:
+  #    name: far-lightbulb
+  #    stroke_color: 111111
   #    size: 24
   label:
     text_transform: uppercase
@@ -186,30 +176,33 @@ blockquote:
   border_left_width: 5
   # FIXME disable negative padding bottom once margin collapsing is implemented
   padding: [0, $horizontal_rhythm, $block_margin_bottom * -0.75, $horizontal_rhythm + $blockquote_border_left_width / 2]
-  cite_font_size: $base_font_size_small
-  cite_font_color: 999999
+  cite:
+    font_size: $base_font_size_small
+    font_color: $role_subtitle_font_color
 verse:
   font_size: $blockquote_font_size
   border_color: $blockquote_border_color
   border_width: $blockquote_border_width
   border_left_width: $blockquote_border_left_width
   padding: $blockquote_padding
-  cite_font_size: $blockquote_cite_font_size
-  cite_font_color: $blockquote_cite_font_color
+  cite:
+    font_size: $blockquote_cite_font_size
+    font_color: $blockquote_cite_font_color
 # code is used for source blocks (perhaps change to source or listing?)
 code:
   font_color: $base_font_color
   font_family: $literal_font_family
-  font_size: ceil($base_font_size_small)
+  font_size: ceil($base_font_size)
   padding: $code_font_size
-  line_height: 1.00
-  # line_height was 1.25
+  line_height: 1.25
   # line_gap is an experimental property to control how a background color is applied to an inline block element
-  line_gap: 3.5
+  line_gap: 3.8
   background_color: F5F5F5
   border_color: CCCCCC
   border_radius: $base_border_radius
   border_width: 0.75
+  callout_list:
+    margin_top: -$block_margin_bottom / 2
 conum:
   font_family: $literal_font_family
   font_color: $literal_font_color
@@ -226,7 +219,6 @@ example:
 image:
   align: left
 prose:
-  margin_top: $block_margin_top
   margin_bottom: $block_margin_bottom
 sidebar:
   background_color: EEEEEE
@@ -257,22 +249,17 @@ outline_list:
   item_spacing: $vertical_rhythm / 2
 table:
   background_color: $page_background_color
-  border_color: CCCCCC
+  border_color: DDDDDD
   border_width: $base_border_width
-  cell_padding: 4
+  cell_padding: 3
   head:
     font_style: bold
-    border_bottom_width: $base_border_width
-    background_color: F9F9F9
+    border_bottom_width: $base_border_width * 2.5
   body:
     stripe_background_color: F9F9F9
   foot:
     background_color: F0F0F0
-ulist:
-  marker:
-    font-family: Noto Serif
 toc:
-  h2-font-style: bold
   indent: $horizontal_rhythm
   line_height: 1.4
   dot_leader:
@@ -284,7 +271,8 @@ footnotes:
   item_spacing: $outline_list_item_spacing / 2
 header:
   font_size: $base_font_size_small
-  line_height: 1
+  height: $base_line_height_length * 2.5
+  line_height: 2
   vertical_align: middle
 footer:
   font_size: $base_font_size_small
@@ -295,11 +283,8 @@ footer:
   line_height: 1
   padding: [$base_line_height_length / 2, 1, 0, 1]
   vertical_align: top
-  recto:
-    #columns: "<50% =0% >50%"
-    right:
+  columns: =100%
+  recto: &shared_footer
+    center:
       content: '{page-number}'
-  verso:
-    #columns: $footer_recto_columns
-    left:
-      content: $footer_recto_right_content
+  verso: *shared_footer

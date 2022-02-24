@@ -1,1 +1,19 @@
-== Ausblick
+== Ausblick und Vertiefung
+Hiermit habt ihr das kleine Tutorial zu *Doc as Code* erfolgreich beendet! icon:hand-peace-o[2x, role=blue]
+
+Ich hoffe, dass ihr einen guten Einblick in die Arbeit mit *asciidoc* gewinnen konntet, und das Tutorial die Grundzüge des *Doc as Code*-Ansatzes vermittelt konnte.
+
+Bei Fragen könnt ihr euch gerne melden: alex.kurzke@hiq.de
+
+Natürlich konnten wir vieles nur oberflächlich anschauen,  wer aber Gefallen an der Arbeit mit *asciidoc* gefunden hat, dem seien daher als Impuls noch folgende interessante Themen und Links mitgegeben:
+
+* individuelles Styling des HTML mittels css-Styleheets
+** icon:hand-o-right[] https://github.com/darshandsoni/asciidoctor-skins
+* individuelles Styling des PDF-Outputs über Themes
+** icon:hand-o-right[] https://github.com/asciidoctor/asciidoctor-pdf/blob/v1.6.0/docs/theming-guide.adoc
+* Einbinden von Diagrammen und Grafiken, bspw. auf PlantUML-Basis
+** icon:hand-o-right[] https://docs.asciidoctor.org/diagram-extension/latest/
+* Icons aus dem Font-Awesome-Set nutzen, um unsere Dokumentation freundlicher und interessanter zu gestalten
+** icon:hand-o-right[] https://docs.asciidoctor.org/asciidoc/latest/macros/icons/
+* Die im GIT verwaltete Dokumenation an einen Static Site Generator anbinden, aus dem die Dokumentationswebseite automatisch generiert werden
+** icon:hand-o-right[] https://antora.org

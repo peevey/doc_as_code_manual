@@ -19,22 +19,22 @@ image::ms_docs_git_raw.png[pdfwidth=85%,align=center]
 
 
 === Der "Doc as Code"-Ansatz in der Technischen Dokumentation
-Was heißt das?
+*Was heißt das?*
 
-Ganz offensichtlich sehen wir beim Aufbau der Technischen Dokumentation Parallelen zum klassischen Umgang mit Programmcode:
+Ganz offensichtlich sehen wir beim Aufbau der Technischen Dokumentation Parallelen zum Umgang mit Programmcode:
 
 . Die Dokumentation wird in einem GIT verwaltet und dort versioniert und kann nach den etablierten Verfahren wie Commits, Pull Requests und Reviews bearbeitet werden.
 . Die Dokumentation wird in einem Rohformat geschrieben, das in seinen Strukturen einer Programmiersprache ähnelt und unabhängig vom Ausgabeformat HTML ist.
 . Und: Die finale Dokumentation wird aus den Rohdaten bei jeder Veröffentlichung neu kompiliert, so wie ein Programm aus seinem Programmcode.
 
-Dahinter steht eine Philosophie, den man als "Doc as Code" bezeichnet. Das heißt: Schreibe deine Dokumentation mit denselben Methoden und Tools wie deinen Programmcode.
+Dahinter steht eine Philosophie, die man als "Doc as Code" bezeichnet. "Doc as Code" heißt: Schreibe deine Dokumentation mit denselben Methoden und Tools wie deinen Programmcode.
 
-Diese Vorgehensweise hat verschiedene Vorteile: Sie bringt das
+Ein besonderer Vorteil dieser Vorgehensweise liegt darin, dass sie die Dokumentationstätigkeit nah an die Arbeitsrealität der Entwickler bringt. Anstatt mit "klassischen" Dokumentationstools wie Word, Confluence, etc. arbeiten zu müssen, können Entwickler ihren Beitrag zur Dokumentation mit den Tools leisten, mit denen sie ohnehin tagtäglich arbeiten. Elementare Voraussetzung dafür ist die Verwendung einer "Vereinfachten Auszeichnungssprache".
 
 
 [NOTE]
 .Vertiefende Lektüre
-https://www.writethedocs.org/guide/docs-as-code/
-
+https://www.writethedocs.org/guide/docs-as-code/ +
+https://www.heise.de/hintergrund/Documentation-as-Code-mit-Asciidoctor-4642013.html
 
 include::vereinfachte_auszeichnungssprachen.adoc[leveloffset=+1]

@@ -1,5 +1,11 @@
 :imagesdir: ../assets/images
 == Das erste Dokument erstellen, previewen und rendern
+====
+*Die Ziele dieses Abschnitts sind:*
+
+* [x] das erste *asciidoc*-Dokument in *ATOM* zu erstellen
+* [x] aus demselben Ursprungsdokument eine Webseite und ein PDF zu generieren
+====
 
 Nachdem wir alle notwendigen Tools installiert haben, wollen wir sie natürlich direkt zur Anwendung bringen.
 
@@ -43,7 +49,7 @@ TIP: Probiert doch direkt ein paar weitere Gestaltungsmöglichkeiten aus, die ih
 [#rendern]
 === Eine Webseite via asciidoctor erzeugen
 
-Natürlich wollen wir unsere Dateien nicht nur als HTML previewen, wir wollen sie auch als HTML-Datei ablegen können. Dazu nutzen wir jetzt den `asciidoctor`-Textprozessor, den wir unter icon:hand-o-right[]<<asciidoctor>> installiert haben.
+Natürlich wollen wir unsere Dateien nicht nur als HTML previewen, wir wollen sie auch als HTML-Datei ablegen können. Dazu nutzen wir jetzt den `asciidoctor`-Textprozessor, den wir unter icon:hand-o-right[] <<asciidoctor>> installiert haben.
 
 . Öffnet ein Terminal.
 . Navigiert zu dem Verzeichnis, in dem die Datei `eiffelturm.adoc` liegt.
@@ -62,7 +68,7 @@ Voilà! Eine kleine Webseite, inklusive Formatierung und Link – und das, ohne 
 
 === Ein PDF via asciidoctor-pdf erzeugen
 
-Fangen wir an, das Potenzial von *asciidoc* etwas auszuschöpfen. Nehmen wir an, wir wollen lieber als PDF in Umlauf bringen, schließlich ist eine Webseite je nach Kontext nicht immer das geeignete Medium für eine Technische Dokumentation.
+Fangen wir an, das Potenzial von *asciidoc* etwas auszuschöpfen. Nehmen wir an, wir wollen unser Dokument lieber als PDF in Umlauf bringen, schließlich ist eine Webseite je nach Kontext nicht immer das geeignete Medium für eine Technische Dokumentation.
 
 . Öffnet dazu erneut ein Terminal.
 . Navigiert wieder zu dem Verzeichnis, in dem die Datei `eiffelturm.adoc` liegt.
@@ -73,7 +79,7 @@ asciidoctor-pdf eiffelturm.adoc
 Jetzt generiert `asciidoctor-pdf` ein PDF-Dokument und legt dieses als `eiffelturm.pdf` ab.
 
 .So sollte das gerenderte PDF aussehen.
-image::eiffelturm_pdf.png[pdfwidth:80%]
+image::eiffelturm_pdf.png[pdfwidth:70%,align=center]
 
 Wie ihr sehen könnt, sind auch im PDF die Formatierungen erhalten geblieben – auch der Link ist wunderbar eingebettet und funktioniert, ohne das wir nur eine einzige Anpassung an unserem Ursprungsdokument vornehmen mussten!
 

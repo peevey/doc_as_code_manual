@@ -1,6 +1,13 @@
 :imagesdir: ../assets/images
 [#makrostruktur]
-== Ein komplexes Dokument mit Inhaltsverzeichnis erstellen
+== Ein komplexes Dokument mit einem Kopfdokument steuern
+====
+*Die Ziele dieses Abschnitts sind:*
+
+* [x] zu lernen, wie man ein komplexeres Dokument über ein Kopfdokument zusammenstellt
+* [x] zu erlernen, wie man ein Inhaltsverzeichnis einbettet
+* [x] globale Eigenschaften kennenzulernen, die über das Kopfdokument festgelegt werden können
+====
 
 Wir haben jetzt gelernt, wie wir mittels *asciidoc* Texte miteinander verknüpfen können. Als nächstes möchten wir nun ein etwas komplexeres Dokument erstellen und dieses mit ein paar besonderen Eigenschaften wie einem Inhaltsverzeichnis ausschmücken.
 
@@ -37,6 +44,7 @@ Ein Kopfdokument bietet darüber hinaus den Vorteil, dass wir in ihm einige glob
 = Berühmte Bauwerke Europas
 Max Mustermann <max.mustermann@hiq.de>
 :description: Eine Übersicht der berühmtesten Bauwerke Europas
+//:title-page:
 :toc:
 :toc-title: Inhaltsverzeichnis
 :sectnums:
@@ -58,6 +66,7 @@ Schauen wir uns die einzelnen Elemente des Kopfdokuments einmal näher an:
 = Berühmte Bauwerke Europas <.>
 Max Mustermann <max.mustermann@hiq.de> <.>
 :description: Eine Übersicht der berühmtesten Bauwerke Europas <.>
+//:title-page: <.>
 :toc: <.>
 :toc-title: Inhaltsverzeichnis <.>
 :sectnums: <.>
@@ -72,6 +81,7 @@ include::turm_von_pisa.adoc[] <.>
 <.> Das ist der Titel des Dokuments, zu erkennen an dem einfachen `=`. Ein Dokument darf immer nur _einen_ Titel haben.
 <.> Unmittelbar unter dem Dokumententitel (keine Leerzeile) folgen die Attribute, diese sind grundsätzlich optional. In die erste Zeile setzen wir den Autor des Dokuments und ggfs. eine E-Mail-Adresse ein.
 <.> Unter dem Attribut `:description:` haben wir die Möglichkeit, eine Beschreibung unserer Datei anzugeben.
+<.> Hier auskommentiert und deshalb nicht wirksam: Bei Angabe des Attributs `:title-page:` wird das PDF mit einer Titelseite ausgestattet.  
 <.> Mit `:toc:` geben wir an, dass unserem Dokument ein Inhaltsverzeichnis ("Table of Contents") vorangestellt werden soll.
 <.> Unter `:toc-title:` bestimmen wir, dass das Inhaltsverzeichnis als "Inhaltsverzeichnis" betitelt werden soll. Ansonsten wird standardmäßig "Table of Contents" gesetzt.
 <.> `:sectnums:` bestimmt, dass unser Inhaltsverzeichnis nummeriert werden soll.

@@ -1,0 +1,13 @@
+== Ziel des Tutorials
+Das Ziel des Tutorials ist, euch den *Doc as Code*-Ansatz in der Technischen Dokumentation näherzubringen.
+In erster Linie wollen wir dazu die Arbeit mit der populären "vereinfachten Auszeichnungssprache" *asciidoc* und den wichtigsten Tools erlernen.
+
+[TIP]
+=====
+Auch dieses Tutorial wurde natürlich in *asciidoc* geschrieben.
+Die Rohdaten findet ihr in folgendem GIT-Repository:
+
+https://github.com/peevey/doc_as_code_tutorial
+
+Im GIT sind an der im README angegebenen Stelle auch Exporte dieses Tutorials als HTML und als PDF zu finden.
+=====

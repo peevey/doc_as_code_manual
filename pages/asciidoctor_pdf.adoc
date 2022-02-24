@@ -19,6 +19,6 @@ Bitte folgt der Anleitung auf der folgenden Seite, um `asciidoctor-pdf` über da
 
 NOTE: https://github.com/asciidoctor/asciidoctor-pdf/tree/main#getting-started
 
-Sobald beide Prozessoren installiert sind, können wir über das Terminal jedes beliebige *asciidoc*-Dokument in das gewünschte Zielformat konvertieren. Wir werden das im Laufe des Tutorials auch direkt ausprobieren, siehe dazu auch icon:hand-o-right[]<<rendern>>.
+Sobald beide Prozessoren installiert sind, können wir über das Terminal jedes beliebige *asciidoc*-Dokument in das gewünschte Zielformat konvertieren. Wir werden das im Laufe des Tutorials auch direkt ausprobieren, siehe dazu auch icon:hand-o-right[] <<rendern>>.
 
 TIP: Wenn euch die Installation der Prozessoren Probleme bereitet, könnt ihr das Tutorial auch auch ersteinmal nur mittels *ATOM* und den unter icon:hand-o-right[] <<atom>> beschriebenen Packages fortsetzen.

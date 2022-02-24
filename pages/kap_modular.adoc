@@ -1,8 +1,10 @@
 :imagesdir: ../assets/images
 == Modulares Arbeiten mit asciidoc
 ====
-* [x] die `include`-Funktion von *asciidoc* kennenlernen
-* [x] ad
+*Die Ziele dieses Abschnitts sind:*
+
+* [x] ein grundsätzliches Verständnis des modularen Textaufbaus zu bekommen
+* [x] die `include`-Funktion von *asciidoc* und den `leveloffset`-Parameter kennenzulernen
 ====
 
 Natürlich wird eine Technische Dokumentation nie aus nur wenigen Sätzen bestehen, die auf eine einzige DIN-A-4-Seite passen. Ganz im Gegenteil, umfangreichere Dokumentationen können sich über hunderte Seiten erstrecken.
@@ -91,6 +93,13 @@ Schauen wir uns jetzt die HTML-Preview von `eiffelturm.adoc` an:
 .In der Vorschau gut zu erkennen: Das Dokument mit Adresse und Öffnungszeiten wird in unseren Text zum Eiffelturm eingebettet.
 image::eiffelturm_include.png[]
 
+Die `include`-Funktion kann für verschiedene Zwecke genutzt werden:
+
+* wir können je nach Anwendungsfall aus denselben Urpsrungsdateien unterschiedliche Zieltexte zusammenstellen
+* wir können oft wiederverwendete Informationen an einer Stelle verwalten und pflegen und diese dann an verschiedenen Stellen inkludieren (Stichwort: Glossar)
+* wir können Quellcode-Beispiele aus den tatsächlichen Code-Dokumenten einbetten
+
+
 === Die Überschriften-Hierarchie kontrollieren
 
 Vielleicht ist es euch schon aufgefallen: Sowohl in unserem Dokument `eiffelturm.adoc` als auch `eiffelturm_adresse.adoc` haben wir jeweils eine Überschrift erster Ordnung verwendet. Deshalb sind die Überschriften "Der Eiffelturm" und "Adresse und Öffnungszeiten des Eiffelturms" in unserem zusammengefügten Dokument auf einer Ebene. Sinnvoller wäre aber, wenn die Adresse ein Unterpunkt im Kapitel zum Eiffelturm wäre.
@@ -101,9 +110,9 @@ Mit dem `leveloffset`-Parameter können wir beim Inkludieren von Dateien kontrol
 ----
 \include::eiffelturm_adresse.adoc[leveloffset=+1]
 ----
-Durch die Angabe von `leveloffset=+1` bestimmen wir, dass alle Überschriften des eingetteten Dokuments genau eine Hierarchieebene nach unten sinken. Jetzt sieht unser HTML-Dokument wie folgt aus:
+Durch die Angabe von `leveloffset=+1` bestimmen wir, dass alle Überschriften des eingebetteten Dokuments genau eine Hierarchieebene nach unten sinken. Jetzt sieht unser HTML-Dokument wie folgt aus:
 
 .Durch Verwendung von leveloffset=+1 werden die Überschriften des eingebetteten Dokuments eine Hierachieebene abgesenkt.
 image::eiffelturm_include_leveloffset.png[]
 
-Der `leveloffset`-Parameter ist ein sehr hilfreiches Werkzeug, wenn man die Gliederung von zusammengefügten Dokumenten kontrollieren und neu strukturieren möchte.
+Der `leveloffset`-Parameter ist ein sehr hilfreiches Werkzeug, wenn man die Gliederung von zusammengefügten Dokumenten kontrollieren und neu strukturieren möchte, ohne dafür die Überschriftenebenen in den einzelnen Dokumenten separat anpassen zu müssen.

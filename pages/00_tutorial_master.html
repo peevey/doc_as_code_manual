@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="description" content="Tutorial zum Erlernen der Grundzüge des "Doc as Code"-Ansatzes">
+<meta name="description" content="Tutorial zum Erlernen der Grundzüge des "Doc as Code"-Ansatzes und der Arbeit mit asciidoc">
 <meta name="author" content="Alex Kurzke">
 <title>Doc as Code-Tutorial</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -445,64 +445,103 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Alex Kurzke</span><br>
 <span id="email" class="email"><a href="mailto:alex.kurzke@hiq.de">alex.kurzke@hiq.de</a></span><br>
-<span id="revnumber">version 0.2</span>
-<br><span id="revremark"></span>
+<span id="revnumber">version 1.0,</span>
+<span id="revdate">23.02.2022</span>
+<br><span id="revremark">Erste Veröffentlichung des Tutorials</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhaltsverzeichnis</div>
 <ul class="sectlevel1">
-<li><a href="#_einführung">1. Einführung</a>
+<li><a href="#_ziel_des_tutorials">1. Ziel des Tutorials</a></li>
+<li><a href="#_einführung">2. Einführung</a>
 <ul class="sectlevel2">
-<li><a href="#_der_doc_as_code_ansatz_in_der_technischen_dokumentation">1.1. Der "Doc as Code"-Ansatz in der Technischen Dokumentation</a></li>
-<li><a href="#_was_sind_vereinfachte_auszeichnungssprachen">1.2. Was sind vereinfachte Auszeichnungssprachen?</a></li>
+<li><a href="#_der_doc_as_code_ansatz_in_der_technischen_dokumentation">2.1. Der "Doc as Code"-Ansatz in der Technischen Dokumentation</a></li>
+<li><a href="#_was_sind_vereinfachte_auszeichnungssprachen">2.2. Was sind vereinfachte Auszeichnungssprachen?</a></li>
 </ul>
 </li>
-<li><a href="#lektion_1">2. Die wichtigsten Tools</a>
+<li><a href="#lektion_1">3. asccidoc und wichtige Dokumentations-Tools</a>
 <ul class="sectlevel2">
-<li><a href="#syntax">2.1. Die asciidoc-Syntax</a>
+<li><a href="#syntax">3.1. Die asciidoc-Syntax</a>
 <ul class="sectlevel3">
-<li><a href="#_basale_gestaltungselemente_in_asciidoc">2.1.1. Basale Gestaltungselemente in asciidoc</a></li>
-<li><a href="#_cheat_sheets">2.1.2. Cheat Sheets</a></li>
+<li><a href="#_basale_gestaltungselemente_in_asciidoc">3.1.1. Basale Gestaltungselemente in asciidoc</a></li>
+<li><a href="#_cheat_sheet_und_weitere_dokumentation">3.1.2. Cheat Sheet und weitere Dokumentation</a></li>
 </ul>
 </li>
-<li><a href="#atom">2.2. Der ATOM Editor</a>
+<li><a href="#atom">3.2. Der ATOM Editor</a>
 <ul class="sectlevel3">
-<li><a href="#_die_packages_asciidoc_preview_language_asciidoc">2.2.1. Die Packages asciidoc-preview &amp; language-asciidoc</a></li>
+<li><a href="#_die_packages_asciidoc_preview_language_asciidoc">3.2.1. Die Packages asciidoc-preview &amp; language-asciidoc</a></li>
 </ul>
 </li>
-<li><a href="#asciidoctor">2.3. Die Textprozessoren asciidoctor &amp; asciidoctor-pdf</a>
+<li><a href="#asciidoctor">3.3. Die Textprozessoren asciidoctor &amp; asciidoctor-pdf</a>
 <ul class="sectlevel3">
-<li><a href="#_asciidoctor">2.3.1. asciidoctor</a></li>
-<li><a href="#_asciidoctor_pdf">2.3.2. asciidoctor-pdf</a></li>
+<li><a href="#_asciidoctor">3.3.1. asciidoctor</a></li>
+<li><a href="#_asciidoctor_pdf">3.3.2. asciidoctor-pdf</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_das_erste_dokument_erstellen_previewen_und_rendern">3. Das erste Dokument erstellen, previewen und rendern</a>
+<li><a href="#_das_erste_dokument_erstellen_previewen_und_rendern">4. Das erste Dokument erstellen, previewen und rendern</a>
 <ul class="sectlevel2">
-<li><a href="#_das_erste_asciidoc_dokument_schreiben">3.1. Das erste asciidoc-Dokument schreiben</a></li>
-<li><a href="#_die_html_preview_via_asciidoc_preview_nutzen">3.2. Die HTML-Preview via asciidoc-preview nutzen</a></li>
-<li><a href="#rendern">3.3. Eine Webseite via asciidoctor erzeugen</a></li>
-<li><a href="#_ein_pdf_via_asciidoctor_pdf_erzeugen">3.4. Ein PDF via asciidoctor-pdf erzeugen</a></li>
+<li><a href="#_das_erste_asciidoc_dokument_schreiben">4.1. Das erste asciidoc-Dokument schreiben</a></li>
+<li><a href="#_die_html_preview_via_asciidoc_preview_nutzen">4.2. Die HTML-Preview via asciidoc-preview nutzen</a></li>
+<li><a href="#rendern">4.3. Eine Webseite via asciidoctor erzeugen</a></li>
+<li><a href="#_ein_pdf_via_asciidoctor_pdf_erzeugen">4.4. Ein PDF via asciidoctor-pdf erzeugen</a></li>
 </ul>
 </li>
-<li><a href="#_modulares_arbeiten_mit_asciidoc">4. Modulares Arbeiten mit asciidoc</a>
+<li><a href="#_modulares_arbeiten_mit_asciidoc">5. Modulares Arbeiten mit asciidoc</a>
 <ul class="sectlevel2">
-<li><a href="#include">4.1. Die include-Funktion nutzen</a></li>
-<li><a href="#_die_überschriften_hierarchie_kontrollieren">4.2. Die Überschriften-Hierarchie kontrollieren</a></li>
+<li><a href="#include">5.1. Die include-Funktion nutzen</a></li>
+<li><a href="#_die_überschriften_hierarchie_kontrollieren">5.2. Die Überschriften-Hierarchie kontrollieren</a></li>
 </ul>
 </li>
+<li><a href="#makrostruktur">6. Ein komplexes Dokument mit einem Kopfdokument steuern</a>
+<ul class="sectlevel2">
+<li><a href="#_ein_kopfdokument_erstellen">6.1. Ein Kopfdokument erstellen</a>
+<ul class="sectlevel3">
+<li><a href="#_globale_attribute_im_dokumentenkopf_festlegen">6.1.1. Globale Attribute im Dokumentenkopf festlegen</a></li>
+</ul>
+</li>
+<li><a href="#_das_ergebnis">6.2. Das Ergebnis</a></li>
+</ul>
+</li>
+<li><a href="#_ausblick_und_vertiefung">7. Ausblick und Vertiefung</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_ziel_des_tutorials">1. Ziel des Tutorials</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Das Ziel des Tutorials ist, euch den <strong>Doc as Code</strong>-Ansatz in der Technischen Dokumentation näherzubringen.
+In erster Linie wollen wir dazu die Arbeit mit der populären "vereinfachten Auszeichnungssprache" <strong>asciidoc</strong> erlernen und die wichtigsten Tools für die Arbeit mit <strong>asciidoc</strong> kennenlernen.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Auch dieses Tutorial wurde natürlich in <strong>asciidoc</strong> geschrieben.
+Die Rohdaten findet ihr in folgendem GIT-Repository:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/peevey/doc_as_code_tutorial" class="bare">https://github.com/peevey/doc_as_code_tutorial</a></p>
+</div>
+<div class="paragraph">
+<p>Im GIT sind an der im README angegebenen Stelle auch Exporte dieses Tutorials als HTML und als PDF zu finden.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_einführung">1. Einführung</h2>
+<h2 id="_einführung">2. Einführung</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Viele von euch haben es sicherlich schon bemerkt: Ruft man heutzutage eine Technische Dokumentation auf, befindet sich auf vielen Seiten ein Button, der zum Bearbeiten  der aktuellen Seite einlädt. Klickt man auf diesen, wird man in der Regel auf ein GIT-Repository verwiesen, wo  die gerade gelesene Datei nicht in unübersichtlichem HTML, sondern meist in einem einfachen und übersichtlichen Format vorliegt.</p>
@@ -524,29 +563,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="../attachements/images/ms_docs.png" alt="ms docs">
+<img src="../assets/images/ms_docs.png" alt="ms docs">
 </div>
 <div class="title">Abb. 1. Beispiel: Eine Seite der Microsoft-Dokumentation. Oben rechts sieht man den Button zum Bearbeiten der Seite.</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="../attachements/images/ms_docs_git.png" alt="ms docs git">
+<img src="../assets/images/ms_docs_git.png" alt="ms docs git">
 </div>
 <div class="title">Abb. 2. Dieselbe Seite im GIT, wo sie theoretisch von jedem bearbeitet werden kann.</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="../attachements/images/ms_docs_git_raw.png" alt="ms docs git raw">
+<img src="../assets/images/ms_docs_git_raw.png" alt="ms docs git raw">
 </div>
 <div class="title">Abb. 3. Dieselbe Seite <em>raw</em> im <strong>markdown</strong>-Format, einer gängigen vereinfachten Markup-Language.</div>
 </div>
 <div class="sect2">
-<h3 id="_der_doc_as_code_ansatz_in_der_technischen_dokumentation">1.1. Der "Doc as Code"-Ansatz in der Technischen Dokumentation</h3>
+<h3 id="_der_doc_as_code_ansatz_in_der_technischen_dokumentation">2.1. Der "Doc as Code"-Ansatz in der Technischen Dokumentation</h3>
 <div class="paragraph">
-<p>Was heißt das?</p>
+<p><strong>Was heißt das?</strong></p>
 </div>
 <div class="paragraph">
-<p>Ganz offensichtlich sehen wir beim Aufbau der Technischen Dokumentation Parallelen zum klassischen Umgang mit Programmcode:</p>
+<p>Ganz offensichtlich sehen wir beim Aufbau der Technischen Dokumentation Parallelen zum Umgang mit Programmcode:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -562,10 +601,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 <div class="paragraph">
-<p>Dahinter steht eine Philosophie, den man als "Doc as Code" bezeichnet. Das heißt: Schreibe deine Dokumentation mit denselben Methoden und Tools wie deinen Programmcode.</p>
+<p>Dahinter steht eine Philosophie, die man als "Doc as Code" bezeichnet. "Doc as Code" heißt: Schreibe deine Dokumentation mit denselben Methoden und Tools wie deinen Programmcode.</p>
 </div>
 <div class="paragraph">
-<p>Diese Vorgehensweise hat verschiedene Vorteile: Sie bringt das</p>
+<p>Ein besonderer Vorteil dieser Vorgehensweise</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -575,24 +614,50 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="title">Vertiefende Lektüre</div>
-<a href="https://www.writethedocs.org/guide/docs-as-code/" class="bare">https://www.writethedocs.org/guide/docs-as-code/</a>
+<a href="https://www.writethedocs.org/guide/docs-as-code/" class="bare">https://www.writethedocs.org/guide/docs-as-code/</a><br>
+<a href="https://www.heise.de/hintergrund/Documentation-as-Code-mit-Asciidoctor-4642013.html" class="bare">https://www.heise.de/hintergrund/Documentation-as-Code-mit-Asciidoctor-4642013.html</a>
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_was_sind_vereinfachte_auszeichnungssprachen">1.2. Was sind vereinfachte Auszeichnungssprachen?</h3>
+<h3 id="_was_sind_vereinfachte_auszeichnungssprachen">2.2. Was sind vereinfachte Auszeichnungssprachen?</h3>
+<div class="paragraph">
+<p>Wahrscheinlich ist schon jeder einmal mit einer vereinfachten Auszeichnungssprache in Kontakt gekommen, ohne es zu bemerken; sei es beim Schreiben von Issues in Jira oder beim Formatieren einer Textnachricht in einem Messenger.</p>
+</div>
+<div class="paragraph">
+<p>Vereinfachte Auszeichnungssprachen (<code>lightweight markup languages</code>, bzw. <code>simple markup languages</code>) sind - wie der Name schon sagt – wie XML, HTML oder YML Markup-Languages. Der Fokus vereinfachter Auszeichnungssprachen liegt dabei auf einer besonders einfachen Syntax, die auch im Rohformat leicht zu lesen und zu schreiben ist, so dass sie in der Regel in jedem Text Editor (und in jeder IDE) komfortabel bearbeitet werden können.</p>
+</div>
+<div class="paragraph">
+<p>Die Konvertierung in die gewünschten Ausgabeformte wie HTML erfolgt grundsätzlich in einem zweiten Schritt, so dass der Fokus auf den Text und dessen Struktur gelegt werden kann.</p>
+</div>
+<div class="paragraph">
+<p>Bekannte vereinfachte Auszeichnungsprachen sind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoc</p>
+</li>
+<li>
+<p>Markdown</p>
+</li>
+<li>
+<p>reStructuredText</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Im Rahmen dieses Tutorials werden wir uns <code>asciidoc</code> genauer anschauen.</p>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="lektion_1">2. Die wichtigsten Tools</h2>
+<h2 id="lektion_1">3. asccidoc und wichtige Dokumentations-Tools</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Im ersten Schritt wollen wir uns mit den wichtigsten Tools ausstatten, die wir für die Arbeit mit <strong>asciidoc</strong> benötigen.</p>
-</div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -601,29 +666,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-check-square-o"></i> die Syntax von <strong>asciidoc</strong> in Grundzügen kennenzulernen, &#8230;&#8203;</p>
+<p><i class="fa fa-check-square-o"></i> einfache Formatierungsmöglichkeiten in <strong>asciidoc</strong> kennenzulernen</p>
 </li>
 <li>
-<p><i class="fa fa-check-square-o"></i> mit <strong>ATOM</strong> einen geeigneten Plain Text Editor einzurichten, mit dem <strong>asciidoc</strong> komfortabel zu bearbeiten ist &#8230;&#8203;</p>
+<p><i class="fa fa-check-square-o"></i> den <strong>ATOM</strong> Editor für die Arbeit mit <strong>asciidoc</strong> einzurichten</p>
 </li>
 <li>
-<p><i class="fa fa-check-square-o"></i> und die Textprozessoren <strong>asciidoctor</strong> und <strong>asciidoctor-pdf</strong> zu installieren, mit denen wir aus unseren <strong>asccidoc</strong>-Dokumenten die gewünschten Zielformate wie HTML5 oder PDF erstellen können.</p>
+<p><i class="fa fa-check-square-o"></i> die Textprozessoren <strong>asciidoctor</strong> und <strong>asciidoctor-pdf</strong> zu installieren, mit denen wir aus unseren <strong>asccidoc</strong>-Dokumenten die gewünschten Zielformate wie HTML5 oder PDF erstellen können.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="syntax">2.1. Die asciidoc-Syntax</h3>
+<h3 id="syntax">3.1. Die asciidoc-Syntax</h3>
 <div class="paragraph">
-<p>Die Möglichkeiten, die <strong>asciidoc</strong> zur Texterstellung bietet, sind schier endlos. Um ein grundlegendes Verständnis der</p>
+<p>Die Möglichkeiten, die <strong>asciidoc</strong> zur Texterstellung bietet, sind schier endlos. Um ein grundlegendes Verständnis der
+Schauen wir uns als Erstes ein paar einfache Formatierungsmöglichkeiten in <strong>asciidoc</strong> an.</p>
 </div>
 <div class="sect3">
-<h4 id="_basale_gestaltungselemente_in_asciidoc">2.1.1. Basale Gestaltungselemente in asciidoc</h4>
-<div class="paragraph">
-<p>Schauen wir uns als Erstes ein paar einfache Formatierungsmöglichkeiten in <strong>asciidoc</strong> an.</p>
-</div>
-<h5 id="_einfache_text_formatierungen" class="discrete">Einfache Text-Formatierungen</h5>
+<h4 id="_basale_gestaltungselemente_in_asciidoc">3.1.1. Basale Gestaltungselemente in asciidoc</h4>
+<div class="sect4">
+<h5 id="_einfache_text_formatierungen">Einfache Text-Formatierungen</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="asciidoc">*fett* <i class="conum" data-value="1"></i><b>(1)</b>
@@ -672,10 +736,10 @@ _kursiv_ <i class="conum" data-value="2"></i><b>(2)</b>
 </tr>
 </table>
 </div>
-<h5 id="_strukturierende_überschriften" class="discrete">Strukturierende Überschriften</h5>
-<div class="paragraph">
-<p>Überschriften sind ein essentieller Bestandteil unserer Texte.</p>
+<div style="page-break-after: always;"></div>
 </div>
+<div class="sect4">
+<h5 id="_strukturierende_überschriften">Strukturierende Überschriften</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="asciidoc">= Der Titel des Dokuments <i class="conum" data-value="1"></i><b>(1)</b>
@@ -703,7 +767,9 @@ _kursiv_ <i class="conum" data-value="2"></i><b>(2)</b>
 </tr>
 </table>
 </div>
-<h5 id="_urls_und_links" class="discrete">URLs und Links</h5>
+</div>
+<div class="sect4">
+<h5 id="_urls_und_links">URLs und Links</h5>
 <div class="paragraph">
 <p>Links erzeugen wir, in dem wir sie einfach als solche in unseren Text einfügen:</p>
 </div>
@@ -726,12 +792,15 @@ _kursiv_ <i class="conum" data-value="2"></i><b>(2)</b>
 <div class="paragraph">
 <p><a href="https://hiq.de">HiQ Projects GmbH</a></p>
 </div>
-<h5 id="_alphanumerische_listen" class="discrete">Alphanumerische Listen</h5>
+</div>
+<div class="sect4">
+<h5 id="_alphanumerische_listen">Alphanumerische Listen</h5>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="asciidoc">. Punkt 1
 . Punkt 2
-.. Unterpunkt 2.1</code></pre>
+.. Unterpunkt 2.1
+... Noch ein Unterpunkt</code></pre>
 </div>
 </div>
 <div class="olist arabic">
@@ -745,13 +814,48 @@ _kursiv_ <i class="conum" data-value="2"></i><b>(2)</b>
 <ol class="loweralpha" type="a">
 <li>
 <p>Unterpunkt</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Noch ein Unterpunkt</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
-<h5 id="_infoboxen_admonition_blocks" class="discrete">Infoboxen (Admonition Blocks)</h5>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_quellcode_beispiele">Quellcode-Beispiele</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="asciidoc">[source,java]
+----
+public class HelloWorld
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+}
+----</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span>
+<span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World!"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_infoboxen_admonition_blocks">Infoboxen (Admonition Blocks)</h5>
 <div class="paragraph">
 <p>Infoboxen eignen sich, um die Aufmerksamkeit des Lesers auf besonders wichtige oder interessante Informationen zu lenken. <strong>Asciidoc</strong> unterstützt von Haus aus verschiedene Arten von Infoboxen, die sehr leicht zu erzeugen sind.
 Folgende Arten von Infoboxen sind möglich: <code>[NOTE]</code>, <code>[TIP]</code>, <code>[IMPORTANT]</code>, <code>[WARNING]</code> &amp; <code>[CAUTION]</code>.</p>
@@ -776,10 +880,11 @@ Ein Text, auf den der Leser mittels eines Warnhinweis hingewiesen werden soll.
 </div>
 <div style="page-break-after: always;"></div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="_cheat_sheets">2.1.2. Cheat Sheets</h4>
+<h4 id="_cheat_sheet_und_weitere_dokumentation">3.1.2. Cheat Sheet und weitere Dokumentation</h4>
 <div class="paragraph">
-<p>Deshalb sollte man immer ein Cheat Sheet griffbereit haben, auf dem die wichtigsten Syntax-Eigenschaften von <strong>asciidoc</strong> verankert sind.</p>
+<p>Einen Überblick über die wichtigsten Syntax-Eigenschaften von <strong>asciidoc</strong> bietet folgendes Cheat Sheet.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -788,17 +893,14 @@ Ein Text, auf den der Leser mittels eines Warnhinweis hingewiesen werden soll.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="title">Cheat Sheets</div>
-<div class="paragraph">
-<p><a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/" class="bare">https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/</a><br>
-<a href="https://www.writethedocs.org/guide/writing/asciidoc/" class="bare">https://www.writethedocs.org/guide/writing/asciidoc/</a><br></p>
-</div>
+<div class="title">Cheat Sheet</div>
+<a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/" class="bare">https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/</a>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Für die Zwecke dieses Tutorials reichen die angegeben Cheat Sheets vollkommen aus. Wer aber wirklich tief in <strong>asciidoc</strong> einsteigen möchte, findet eine umfängliche Dokumentation hier:</p>
+<p>Für die Zwecke dieses Tutorials reichen die hier angebgenen Hinweise vollkommen aus. Wer aber wirklich tief in <strong>asciidoc</strong> einsteigen möchte, findet eine umfängliche Dokumentation hier:</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -807,6 +909,7 @@ Ein Text, auf den der Leser mittels eines Warnhinweis hingewiesen werden soll.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
+<div class="title">asciidoc-Dokumentation</div>
 <a href="https://docs.asciidoctor.org/asciidoc/latest/" class="bare">https://docs.asciidoctor.org/asciidoc/latest/</a>
 </td>
 </tr>
@@ -816,7 +919,7 @@ Ein Text, auf den der Leser mittels eines Warnhinweis hingewiesen werden soll.
 </div>
 </div>
 <div class="sect2">
-<h3 id="atom">2.2. Der ATOM Editor</h3>
+<h3 id="atom">3.2. Der ATOM Editor</h3>
 <div class="paragraph">
 <p><strong>Asciidoc</strong>-Dateien können wir in jedem beliebigen Plain Text Editor schreiben. Für unser Vorhaben eignet sich aber besonders der <strong>ATOM</strong>-Editor. Der Editor bietet zahlreiche Vorteile, bspw. können wir mit <strong>ATOM</strong> unsere Dokumentation in einem GIT-Repository verwalten.</p>
 </div>
@@ -836,7 +939,7 @@ Ein Text, auf den der Leser mittels eines Warnhinweis hingewiesen werden soll.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_die_packages_asciidoc_preview_language_asciidoc">2.2.1. Die Packages asciidoc-preview &amp; language-asciidoc</h4>
+<h4 id="_die_packages_asciidoc_preview_language_asciidoc">3.2.1. Die Packages asciidoc-preview &amp; language-asciidoc</h4>
 <div class="paragraph">
 <p>Sobald wir <strong>ATOM</strong> installiert haben, müssen wir noch die notwendigen Packages hinzufügen.</p>
 </div>
@@ -845,7 +948,7 @@ Ein Text, auf den der Leser mittels eines Warnhinweis hingewiesen werden soll.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/packages.png" alt="packages">
+<img src="../assets/images/packages.png" alt="packages">
 </div>
 <div class="title">Abb. 4. Der Package-Manager von <strong>ATOM</strong></div>
 </div>
@@ -890,7 +993,7 @@ Siehe <span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="#asc
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/asciidoc_preview.png" alt="asciidoc preview">
+<img src="../assets/images/asciidoc_preview.png" alt="asciidoc preview">
 </div>
 <div class="title">Abb. 5. Syntax Highlighting via <code>language-asciidoc</code> und HTML-Preview mit <code>asciidoc-preview</code> in <strong>ATOM</strong>.</div>
 </div>
@@ -898,12 +1001,12 @@ Siehe <span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="#asc
 </div>
 </div>
 <div class="sect2">
-<h3 id="asciidoctor">2.3. Die Textprozessoren asciidoctor &amp; asciidoctor-pdf</h3>
+<h3 id="asciidoctor">3.3. Die Textprozessoren asciidoctor &amp; asciidoctor-pdf</h3>
 <div class="paragraph">
 <p><strong>Asciidoc</strong> ist die vereinfachte Auszeichnungssprache, mit der wir unsere Texte im Rohformat schreiben. Um aus <strong>asciidoc</strong>-Dokumenten die gewünschten Ausgabeformate zu rendern, benötigen wir jetzt noch die entsprechenden <strong>Textprozessoren</strong>.</p>
 </div>
 <div class="sect3">
-<h4 id="_asciidoctor">2.3.1. asciidoctor</h4>
+<h4 id="_asciidoctor">3.3.1. asciidoctor</h4>
 <div class="paragraph">
 <p><code>asciidoctor</code> unterstützt von Haus aus die Ausgabeformate <code>HTML5</code>, <code>DocBook 5</code> und <code>man page</code>. Außerderm integriert <code>asciidoctor</code> ein Standard-Styleheet, durch das die generierten HTML-Dateien direkt in einem ansprechenden Design daherkommen und einen Syntax Highlighter, durch den Codebeispiele im HTML farblich hervorgehoben werden.</p>
 </div>
@@ -924,7 +1027,7 @@ Siehe <span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="#asc
 </div>
 </div>
 <div class="sect3">
-<h4 id="_asciidoctor_pdf">2.3.2. asciidoctor-pdf</h4>
+<h4 id="_asciidoctor_pdf">3.3.2. asciidoctor-pdf</h4>
 <div class="paragraph">
 <p><code>asciidoctor-pdf</code> ist eine Erweiterung von <code>asciidoctor</code> und erlaubt uns, auch PDF-Dateien aus unseren <strong>asciidoc</strong>-Dateien zu rendern. Da wir im Laufe des Tutorials sehen wollen, wie aus den selben Rohdaten verschiedene Ausgabeformate erzeugt werden können, benötigen wir auch diese Erweiterung.</p>
 </div>
@@ -944,7 +1047,7 @@ Siehe <span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="#asc
 </table>
 </div>
 <div class="paragraph">
-<p>Sobald beide Prozessoren installiert sind, können wir über das Terminal jedes beliebige <strong>asciidoc</strong>-Dokument in das gewünschte Zielformat konvertieren. Wir werden das im Laufe des Tutorials auch direkt ausprobieren, siehe dazu auch <span class="icon"><i class="fa fa-hand-o-right"></i></span><a href="#rendern">Eine Webseite via asciidoctor erzeugen</a>.</p>
+<p>Sobald beide Prozessoren installiert sind, können wir über das Terminal jedes beliebige <strong>asciidoc</strong>-Dokument in das gewünschte Zielformat konvertieren. Wir werden das im Laufe des Tutorials auch direkt ausprobieren, siehe dazu auch <span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="#rendern">Eine Webseite via asciidoctor erzeugen</a>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -964,13 +1067,30 @@ Wenn euch die Installation der Prozessoren Probleme bereitet, könnt ihr das Tut
 </div>
 </div>
 <div class="sect1">
-<h2 id="_das_erste_dokument_erstellen_previewen_und_rendern">3. Das erste Dokument erstellen, previewen und rendern</h2>
+<h2 id="_das_erste_dokument_erstellen_previewen_und_rendern">4. Das erste Dokument erstellen, previewen und rendern</h2>
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Die Ziele dieses Abschnitts sind:</strong></p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-check-square-o"></i> das erste <strong>asciidoc</strong>-Dokument in <strong>ATOM</strong> zu erstellen</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> aus demselben Ursprungsdokument eine Webseite und ein PDF zu generieren</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Nachdem wir alle notwendigen Tools installiert haben, wollen wir sie natürlich direkt zur Anwendung bringen.</p>
 </div>
 <div class="sect2">
-<h3 id="_das_erste_asciidoc_dokument_schreiben">3.1. Das erste asciidoc-Dokument schreiben</h3>
+<h3 id="_das_erste_asciidoc_dokument_schreiben">4.1. Das erste asciidoc-Dokument schreiben</h3>
 <div class="paragraph">
 <p>Erstellen wir zunächst ein <strong>asciidoc</strong>-Dokument in <strong>ATOM</strong>.</p>
 </div>
@@ -1002,7 +1122,7 @@ Gustave Eiffel war ein französischer Ingenieur.</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/eiffelturm_atom.png" alt="eiffelturm atom">
+<img src="../assets/images/eiffelturm_atom.png" alt="eiffelturm atom">
 </div>
 <div class="title">Abb. 6. Die asciidoc-Syntax wird farblich hervorgehoben, sobald das Dokument anhand der Dateiendung als asciidoc zu erkennen ist.</div>
 </div>
@@ -1011,13 +1131,13 @@ Gustave Eiffel war ein französischer Ingenieur.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_die_html_preview_via_asciidoc_preview_nutzen">3.2. Die HTML-Preview via asciidoc-preview nutzen</h3>
+<h3 id="_die_html_preview_via_asciidoc_preview_nutzen">4.2. Die HTML-Preview via asciidoc-preview nutzen</h3>
 <div class="paragraph">
 <p>Jetzt möchten wir natürlich sehen, wie unser Text im HTML-Format aussehen würde. Dazu öffnen wir in <strong>ATOM</strong> die HTML-Preview mittels der Tastenkombination <span class="keyseq"><kbd>shift</kbd>+<kbd>strg</kbd>+<kbd>a</kbd></span>, bzw. <span class="keyseq"><kbd>shift</kbd>+<kbd>cmd</kbd>+<kbd>a</kbd></span>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/eiffelturm_preview.png" alt="eiffelturm preview">
+<img src="../assets/images/eiffelturm_preview.png" alt="eiffelturm preview">
 </div>
 <div class="title">Abb. 7. Links zu sehen: Der Text im asccidoc-Rohformat, rechts die HTML-Preview.</div>
 </div>
@@ -1038,9 +1158,9 @@ Probiert doch direkt ein paar weitere Gestaltungsmöglichkeiten aus, die ihr unt
 </div>
 </div>
 <div class="sect2">
-<h3 id="rendern">3.3. Eine Webseite via asciidoctor erzeugen</h3>
+<h3 id="rendern">4.3. Eine Webseite via asciidoctor erzeugen</h3>
 <div class="paragraph">
-<p>Natürlich wollen wir unsere Dateien nicht nur als HTML previewen, wir wollen sie auch als HTML-Datei ablegen können. Dazu nutzen wir jetzt den <code>asciidoctor</code>-Textprozessor, den wir unter <span class="icon"><i class="fa fa-hand-o-right"></i></span><a href="#asciidoctor">Die Textprozessoren asciidoctor &amp; asciidoctor-pdf</a> installiert haben.</p>
+<p>Natürlich wollen wir unsere Dateien nicht nur als HTML previewen, wir wollen sie auch als HTML-Datei ablegen können. Dazu nutzen wir jetzt den <code>asciidoctor</code>-Textprozessor, den wir unter <span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="#asciidoctor">Die Textprozessoren asciidoctor &amp; asciidoctor-pdf</a> installiert haben.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1065,7 +1185,7 @@ Probiert doch direkt ein paar weitere Gestaltungsmöglichkeiten aus, die ihr unt
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/eiffelturm_html.png" alt="eiffelturm html">
+<img src="../assets/images/eiffelturm_html.png" alt="eiffelturm html">
 </div>
 <div class="title">Abb. 8. So sollte die gerenderte HTML-Datei aussehen, wenn wir sie im Browser öffnen.</div>
 </div>
@@ -1086,9 +1206,9 @@ Wie oben bereits erwähnt, kann die HTML-Datei auch über Rechtsklick auf die <s
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ein_pdf_via_asciidoctor_pdf_erzeugen">3.4. Ein PDF via asciidoctor-pdf erzeugen</h3>
+<h3 id="_ein_pdf_via_asciidoctor_pdf_erzeugen">4.4. Ein PDF via asciidoctor-pdf erzeugen</h3>
 <div class="paragraph">
-<p>Fangen wir an, das Potenzial von <strong>asciidoc</strong> etwas auszuschöpfen. Nehmen wir an, wir wollen lieber als PDF in Umlauf bringen, schließlich ist eine Webseite je nach Kontext nicht immer das geeignete Medium für eine Technische Dokumentation.</p>
+<p>Fangen wir an, das Potenzial von <strong>asciidoc</strong> etwas auszuschöpfen. Nehmen wir an, wir wollen unser Dokument lieber als PDF in Umlauf bringen, schließlich ist eine Webseite je nach Kontext nicht immer das geeignete Medium für eine Technische Dokumentation.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1111,9 +1231,9 @@ Wie oben bereits erwähnt, kann die HTML-Datei auch über Rechtsklick auf die <s
 <div class="paragraph">
 <p>Jetzt generiert <code>asciidoctor-pdf</code> ein PDF-Dokument und legt dieses als <code>eiffelturm.pdf</code> ab.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="../images/eiffelturm_pdf.png" alt="pdfwidth:80%">
+<img src="../assets/images/eiffelturm_pdf.png" alt="pdfwidth:70%">
 </div>
 <div class="title">Abb. 9. So sollte das gerenderte PDF aussehen.</div>
 </div>
@@ -1131,17 +1251,20 @@ Wie oben bereits erwähnt, kann die HTML-Datei auch über Rechtsklick auf die <s
 </div>
 </div>
 <div class="sect1">
-<h2 id="_modulares_arbeiten_mit_asciidoc">4. Modulares Arbeiten mit asciidoc</h2>
+<h2 id="_modulares_arbeiten_mit_asciidoc">5. Modulares Arbeiten mit asciidoc</h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p><strong>Die Ziele dieses Abschnitts sind:</strong></p>
+</div>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-check-square-o"></i> die <code>include</code>-Funktion von <strong>asciidoc</strong> kennenlernen</p>
+<p><i class="fa fa-check-square-o"></i> ein grundsätzliches Verständnis des modularen Textaufbaus zu bekommen</p>
 </li>
 <li>
-<p><i class="fa fa-check-square-o"></i> ad</p>
+<p><i class="fa fa-check-square-o"></i> die <code>include</code>-Funktion von <strong>asciidoc</strong> und den <code>leveloffset</code>-Parameter kennenzulernen</p>
 </li>
 </ul>
 </div>
@@ -1157,7 +1280,7 @@ Wie oben bereits erwähnt, kann die HTML-Datei auch über Rechtsklick auf die <s
 <p>Hier kommt eine besondere Stärke von <strong>asciidoc</strong> ins Spiel: Die <code>include</code>-Funktion. Mit ihr können wir jedes Text-Dokument in ein <strong>asciidoc</strong>-Dokument einbetten und auf diese Weise aus verschiedenen Textbestandteilen unseren gewünschten Gesamttext zusammenstellen.</p>
 </div>
 <div class="sect2">
-<h3 id="include">4.1. Die include-Funktion nutzen</h3>
+<h3 id="include">5.1. Die include-Funktion nutzen</h3>
 <div class="paragraph">
 <p>Ein einfaches Beispiel: Nehmen wir an, wir möchten unserem kleinen Text zum Eiffelturm noch die Adresse und die Öffnungszeiten hinzufügen. Es könnte ja sein, dass wir diese Informationen später einmal an verschiedenen Stellen unseres Textes benötigen – es wäre doch sehr umständlich, dann bei jeder Veränderung der Öffnungszeiten die einzelnen Stellen jeweils einzeln anpassen zu müssen.</p>
 </div>
@@ -1257,13 +1380,29 @@ Da <code>eiffelturm.adoc</code> und <code>eiffelturm_adresse.adoc</code> auf ein
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/eiffelturm_include.png" alt="eiffelturm include">
+<img src="../assets/images/eiffelturm_include.png" alt="eiffelturm include">
 </div>
 <div class="title">Abb. 10. In der Vorschau gut zu erkennen: Das Dokument mit Adresse und Öffnungszeiten wird in unseren Text zum Eiffelturm eingebettet.</div>
 </div>
+<div class="paragraph">
+<p>Die <code>include</code>-Funktion kann für verschiedene Zwecke genutzt werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>wir können je nach Anwendungsfall aus denselben Urpsrungsdateien unterschiedliche Zieltexte zusammenstellen</p>
+</li>
+<li>
+<p>wir können oft wiederverwendete Informationen an einer Stelle verwalten und pflegen und diese dann an verschiedenen Stellen inkludieren (Stichwort: Glossar)</p>
+</li>
+<li>
+<p>wir können Quellcode-Beispiele aus den tatsächlichen Code-Dokumenten einbetten</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_die_überschriften_hierarchie_kontrollieren">4.2. Die Überschriften-Hierarchie kontrollieren</h3>
+<h3 id="_die_überschriften_hierarchie_kontrollieren">5.2. Die Überschriften-Hierarchie kontrollieren</h3>
 <div class="paragraph">
 <p>Vielleicht ist es euch schon aufgefallen: Sowohl in unserem Dokument <code>eiffelturm.adoc</code> als auch <code>eiffelturm_adresse.adoc</code> haben wir jeweils eine Überschrift erster Ordnung verwendet. Deshalb sind die Überschriften "Der Eiffelturm" und "Adresse und Öffnungszeiten des Eiffelturms" in unserem zusammengefügten Dokument auf einer Ebene. Sinnvoller wäre aber, wenn die Adresse ein Unterpunkt im Kapitel zum Eiffelturm wäre.</p>
 </div>
@@ -1276,29 +1415,292 @@ Da <code>eiffelturm.adoc</code> und <code>eiffelturm_adresse.adoc</code> auf ein
 </div>
 </div>
 <div class="paragraph">
-<p>Durch die Angabe von <code>leveloffset=+1</code> bestimmen wir, dass alle Überschriften des eingetteten Dokuments genau eine Hierarchieebene nach unten sinken. Jetzt sieht unser HTML-Dokument wie folgt aus:</p>
+<p>Durch die Angabe von <code>leveloffset=+1</code> bestimmen wir, dass alle Überschriften des eingebetteten Dokuments genau eine Hierarchieebene nach unten sinken. Jetzt sieht unser HTML-Dokument wie folgt aus:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/eiffelturm_include_leveloffset.png" alt="eiffelturm include leveloffset">
+<img src="../assets/images/eiffelturm_include_leveloffset.png" alt="eiffelturm include leveloffset">
 </div>
 <div class="title">Abb. 11. Durch Verwendung von leveloffset=+1 werden die Überschriften des eingebetteten Dokuments eine Hierachieebene abgesenkt.</div>
 </div>
 <div class="paragraph">
-<p>Der <code>leveloffset</code>-Parameter ist ein sehr hilfreiches Werkzeug, wenn man die Gliederung von zusammengefügten Dokumenten kontrollieren und neu strukturieren möchte.</p>
+<p>Der <code>leveloffset</code>-Parameter ist ein sehr hilfreiches Werkzeug, wenn man die Gliederung von zusammengefügten Dokumenten kontrollieren und neu strukturieren möchte, ohne dafür die Überschriftenebenen in den einzelnen Dokumenten separat anpassen zu müssen.</p>
 </div>
 <div style="page-break-after: always;"></div>
-<div class="paragraph">
-<p>Unresolved directive in 00_tutorial_master.adoc - include::pages/kap_kopfdokument_inhaltsverzeichnis.adoc[]</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="makrostruktur">6. Ein komplexes Dokument mit einem Kopfdokument steuern</h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Die Ziele dieses Abschnitts sind:</strong></p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-check-square-o"></i> zu lernen, wie man ein komplexeres Dokument über ein Kopfdokument zusammenstellt</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> zu erlernen, wie man ein Inhaltsverzeichnis einbettet</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> globale Eigenschaften kennenzulernen, die über das Kopfdokument festgelegt werden können</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Wir haben jetzt gelernt, wie wir mittels <strong>asciidoc</strong> Texte miteinander verknüpfen können. Als nächstes möchten wir nun ein etwas komplexeres Dokument erstellen und dieses mit ein paar besonderen Eigenschaften wie einem Inhaltsverzeichnis ausschmücken.</p>
+</div>
+<div class="paragraph">
+<p>Damit wir genug Material zum Zusammenfügen haben, erstellen wir zunächst ein weiteres <strong>asciidoc</strong>-Dokument und speichern es als <code>turm_von_pisa.adoc</code> ab.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="asciidoc">== Der schiefe Turm von Pisa
+Der schiefe Turm von Pisa ist das Wahrzeichen der Stadt Pisa in Italien und wegen seiner starken Neigung weltberühmt. Die Grundsteinlegung des Turms erfolgte am 9.August 1173.
+
+CAUTION: Der schiefe Turm von Pisa hat eine Gesamtneigung von ca. 4 Grad.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In unserem Projektordner sollten wir jetzt drei <code>asciidoc</code>-Dokumente haben:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre><span class="icon"><i class="fa fa-folder"></i></span> "Mein Projekt"
+   <span class="icon"><i class="fa fa-file"></i></span> eiffelturm.adoc
+   <span class="icon"><i class="fa fa-file"></i></span> eiffelturm_adresse.adoc
+   <span class="icon"><i class="fa fa-file"></i></span> turm_von_pisa.adoc</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ein_kopfdokument_erstellen">6.1. Ein Kopfdokument erstellen</h3>
+<div class="paragraph">
+<p>Diese Dokumente möchten wir jetzt zu einem zusammenfügen. Wir erstellen dazu jetzt noch ein weiteres <strong>asciidoc</strong>-Dokument, das den <strong>"Kopf"</strong> unseres Textes darstellen wird und mittels dem wir die Gesamtstruktur unseres Textes festlegen werden.
+Ein Kopfdokument bietet darüber hinaus den Vorteil, dass wir in ihm einige globale Attribute unseres Dokuments zentral bestimmen können.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Kopiert folgenden Text in eine neue Datei.</p>
+</li>
+<li>
+<p>Speichert die Datei unter <code>bauwerke_europas.adoc</code> ab.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="asciidoc">= Berühmte Bauwerke Europas
+Max Mustermann &lt;max.mustermann@hiq.de&gt;
+:description: Eine Übersicht der berühmtesten Bauwerke Europas
+//:title-page:
+:toc:
+:toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+
+include::eiffelturm.adoc[]
+
+&lt;&lt;&lt;
+
+include::turm_von_pisa.adoc[]</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_globale_attribute_im_dokumentenkopf_festlegen">6.1.1. Globale Attribute im Dokumentenkopf festlegen</h4>
+<div class="paragraph">
+<p>Schauen wir uns die einzelnen Elemente des Kopfdokuments einmal näher an:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="asciidoc">= Berühmte Bauwerke Europas <i class="conum" data-value="1"></i><b>(1)</b>
+Max Mustermann &lt;max.mustermann@hiq.de&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+:description: Eine Übersicht der berühmtesten Bauwerke Europas <i class="conum" data-value="3"></i><b>(3)</b>
+//:title-page: <i class="conum" data-value="4"></i><b>(4)</b>
+:toc: <i class="conum" data-value="5"></i><b>(5)</b>
+:toc-title: Inhaltsverzeichnis <i class="conum" data-value="6"></i><b>(6)</b>
+:sectnums: <i class="conum" data-value="7"></i><b>(7)</b>
+:icons: font <i class="conum" data-value="8"></i><b>(8)</b>
+<i class="conum" data-value="9"></i><b>(9)</b>
+include::eiffelturm.adoc[] <i class="conum" data-value="10"></i><b>(10)</b>
+
+&lt;&lt;&lt; <i class="conum" data-value="11"></i><b>(11)</b>
+
+include::turm_von_pisa.adoc[] <i class="conum" data-value="12"></i><b>(12)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Das ist der Titel des Dokuments, zu erkennen an dem einfachen <code>=</code>. Ein Dokument darf immer nur <em>einen</em> Titel haben.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Unmittelbar unter dem Dokumententitel (keine Leerzeile) folgen die Attribute, diese sind grundsätzlich optional. In die erste Zeile setzen wir den Autor des Dokuments und ggfs. eine E-Mail-Adresse ein.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Unter dem Attribut <code>:description:</code> haben wir die Möglichkeit, eine Beschreibung unserer Datei anzugeben.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Hier auskommentiert und deshalb nicht wirksam: Bei Angabe des Attributs <code>:title-page:</code> wird das PDF mit einer Titelseite ausgestattet.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Mit <code>:toc:</code> geben wir an, dass unserem Dokument ein Inhaltsverzeichnis ("Table of Contents") vorangestellt werden soll.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Unter <code>:toc-title:</code> bestimmen wir, dass das Inhaltsverzeichnis als "Inhaltsverzeichnis" betitelt werden soll. Ansonsten wird standardmäßig "Table of Contents" gesetzt.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td><code>:sectnums:</code> bestimmt, dass unser Inhaltsverzeichnis nummeriert werden soll.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td><code>:icons: font</code> ermöglicht u.a., dass unsere Hinweisboxen im Export mit einem Icon versehen werden.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td>Die erste Leerzeile schließt den Kopf des Dokuments ab.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
+<td>Hier inkludieren wir die erste Datei <code>eiffelturm.adoc</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="11"></i><b>11</b></td>
+<td>Die Zeichenkette <code>&lt;&lt;&lt;</code> erzwingt einen Seitenumbruch im PDF-Format.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="12"></i><b>12</b></td>
+<td>Hier inkludieren wir unseren Text zum Turm von Pisa.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Im Abschnitt <span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="#include">Die include-Funktion nutzen</a> haben wir ja bereits dafür gesorgt, dass das Dokument <code>eiffelturm_adresse.adoc</code> vom Dokument <code>eiffelturm.adoc</code> eingebettet wird, deswegen müssen wir die Datei hier kein weiteres mal inkludieren.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Nebenei: Die hier aufgeführten Eigenschaften sind nur einige wenige Attribute, die wir in <strong>asciidoc</strong> im Dokumentenkopf bestimmen können.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_das_ergebnis">6.2. Das Ergebnis</h3>
+<div class="paragraph">
+<p>Schauen wir mal, wie sich unsere Einstellungen auf das Endergebnis auswirken. Wir nutzen erneut <code>asccidoctor</code> und <code>asccidoctor-pdf</code>, um aus <code>bauwerke_europas.adoc</code> eine Webseite, bzw. ein PDF zu rendern.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../assets/images/bauwerke_europas_html.png" alt="bauwerke europas html">
+</div>
+<div class="title">Abb. 12. <span class="icon"><i class="fa fa-thumbs-up fa-2x"></i></span> Die fertige Webseite mit interaktivem Inhaltsverzeichnis und unseren Autorinformationen</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../assets/images/bauwerke_europas_pdf.png" alt="bauwerke europas pdf">
+</div>
+<div class="title">Abb. 13. <span class="icon"><i class="fa fa-thumbs-up fa-2x"></i></span> Das gerenderete PDF, ebenfalls mit interaktivem Inhaltsverzeichnis und dem gewünschten Seitenumbruch.</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ausblick_und_vertiefung">7. Ausblick und Vertiefung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hiermit habt ihr das kleine Tutorial zu <strong>Doc as Code</strong> erfolgreich beendet! <span class="icon blue"><i class="fa fa-hand-peace-o fa-2x"></i></span></p>
+</div>
+<div class="paragraph">
+<p>Ich hoffe, dass ihr einen guten Einblick in die Arbeit mit <strong>asciidoc</strong> gewinnen konntet, und das Tutorial die Grundzüge des <strong>Doc as Code</strong>-Ansatzes vermittelt konnte.</p>
+</div>
+<div class="paragraph">
+<p>Bei Fragen könnt ihr euch gerne melden: <a href="mailto:alex.kurzke@hiq.de">alex.kurzke@hiq.de</a></p>
+</div>
+<div class="paragraph">
+<p>Natürlich konnten wir vieles nur oberflächlich anschauen,  wer aber Gefallen an der Arbeit mit <strong>asciidoc</strong> gefunden hat, dem seien daher als Impuls noch folgende interessante Themen und Links mitgegeben:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>individuelles Styling des HTML mittels css-Styleheets</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="https://github.com/darshandsoni/asciidoctor-skins" class="bare">https://github.com/darshandsoni/asciidoctor-skins</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>individuelles Styling des PDF-Outputs über Themes</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="https://github.com/asciidoctor/asciidoctor-pdf/blob/v1.6.0/docs/theming-guide.adoc" class="bare">https://github.com/asciidoctor/asciidoctor-pdf/blob/v1.6.0/docs/theming-guide.adoc</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Einbinden von Diagrammen und Grafiken, bspw. auf PlantUML-Basis</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="https://docs.asciidoctor.org/diagram-extension/latest/" class="bare">https://docs.asciidoctor.org/diagram-extension/latest/</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Icons aus dem Font-Awesome-Set nutzen, um unsere Dokumentation freundlicher und interessanter zu gestalten</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="https://docs.asciidoctor.org/asciidoc/latest/macros/icons/" class="bare">https://docs.asciidoctor.org/asciidoc/latest/macros/icons/</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Die im GIT verwaltete Dokumenation an einen Static Site Generator anbinden, aus dem die Dokumentationswebseite automatisch generiert werden</p>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon"><i class="fa fa-hand-o-right"></i></span> <a href="https://antora.org" class="bare">https://antora.org</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.2<br>
-Last updated 2022-02-22 12:10:44 +0100
+Version 1.0<br>
+Last updated 2022-02-24 10:56:12 +0100
 </div>
 </div>
 <style>

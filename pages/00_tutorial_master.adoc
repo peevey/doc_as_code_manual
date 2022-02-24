@@ -1,24 +1,29 @@
-= Doc as Code-Tutorial
-Alex Kurzke <alex.kurzke@hiq.de>
-:description: Tutorial zum Erlernen der Grundzüge des "Doc as Code"-Ansatzes
+= Doc as Code-Tutorial: Technische Dokumentation mit asciidoc
+:author: Alex Kurzke
+:email: alex.kurzke@hiq.de
+:description: Grundzüge des "Doc as Code"-Ansatzes auf Basis von asciidoc
 :toc: left
 :toc-title: Inhaltsverzeichnis
+:title-page:
+:title-logo-image: image:hiq.png[pdfwidth=20%,align=center]
 :toclevels: 3
 :sectnums:
-:revnumber: 0.2
-:revremark:
+:revnumber: 1.0
+:revremark: Erste Veröffentlichung des Tutorials
+:revdate: 23.02.2022
 :icons: font
 :source-highlighter: rouge
 :rouge-style: thankful_eyes
 :imagesdir: ../assets/images
 :figure-caption: Abb.
 :experimental: Yes
-//:stylesheet: style.css
-//:stylesdir: themes
-//:pdf-themesdir: themes
-:pdf-fontsdir: font/noto_sans;font/robotoserif;GEM_FONTS_DIR
-//:pdf-theme: pdf_theme.yml
+:stylesdir: ../themes
+//:stylesheet: fedora.css
+:pdf-themesdir: ../themes
+:pdf-fontsdir: font/noto_sans;GEM_FONTS_DIR
+:pdf-theme: pdf_theme.yml
 
+include::kap_tutorial_ziel.adoc[]
 
 <<<
 
@@ -38,4 +43,8 @@ include::kap_modular.adoc[]
 
 <<<
 
-include::kap_kopfdokument_inhaltsverzeichnis.adoc[]
+include::kap_kopfdokument.adoc[]
+
+<<<
+
+include::kap_ausblick.adoc[]

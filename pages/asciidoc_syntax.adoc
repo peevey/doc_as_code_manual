@@ -1,20 +1,17 @@
 :imagesdir: ../assets/images
 [#syntax]
 == Die asciidoc-Syntax
-
 Die Möglichkeiten, die *asciidoc* zur Texterstellung bietet, sind schier endlos. Um ein grundlegendes Verständnis der
+Schauen wir uns als Erstes ein paar einfache Formatierungsmöglichkeiten in *asciidoc* an.
 
 === Basale Gestaltungselemente in asciidoc
 
-Schauen wir uns als Erstes ein paar einfache Formatierungsmöglichkeiten in *asciidoc* an.
-
-[discrete]
 ==== Einfache Text-Formatierungen
 [source, asciidoc]
 ----
 *fett* <.>
 _kursiv_ <.>
-`mono` <.>
+`mono` <.>	
 #markiert# <.>
 [.underline]#unterstrichen# <.>
 [.line-through]#durchgestrichen# <.>
@@ -31,11 +28,8 @@ _kursiv_ <.>
 <.> ^hochgestellter^ Text
 <.> ~tiefgestellter~ Text
 
-[discrete]
+<<<
 ==== Strukturierende Überschriften
-
-Überschriften sind ein essentieller Bestandteil unserer Texte.
-
 [source, asciidoc]
 ----
 = Der Titel des Dokuments <.>
@@ -50,7 +44,6 @@ _kursiv_ <.>
 <.> Das html-Äquivalent dieser Überschrift ist `<h1></h1>`.
 <.> Das html-Äquivalent dieser Überschrift ist `<h2></h2>`, usw.
 
-[discrete]
 ==== URLs und Links
 Links erzeugen wir, in dem wir sie einfach als solche in unseren Text einfügen:
 
@@ -68,9 +61,7 @@ https://hiq.de[HiQ Projects GmbH]
 ----
 https://hiq.de[HiQ Projects GmbH]
 
-[discrete]
 ==== Alphanumerische Listen
-
 [source,asciidoc]
 ----
 . Punkt 1
@@ -84,9 +75,19 @@ https://hiq.de[HiQ Projects GmbH]
 .. Unterpunkt
 ... Noch ein Unterpunkt
 
-[discrete]
-==== Quellcode
-include::./partials/sample_java.adoc[]
+==== Quellcode-Beispiele
+[source,asciidoc]
+....
+[source,java]
+----
+public class HelloWorld
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+}
+----
+....
 
 [source,java]
 ----
@@ -98,9 +99,6 @@ public class HelloWorld
 }
 ----
 
-
-
-[discrete]
 ==== Infoboxen (Admonition Blocks)
 Infoboxen eignen sich, um die Aufmerksamkeit des Lesers auf besonders wichtige oder interessante Informationen zu lenken. *Asciidoc* unterstützt von Haus aus verschiedene Arten von Infoboxen, die sehr leicht zu erzeugen sind.
 Folgende Arten von Infoboxen sind möglich: `[NOTE]`, `[TIP]`, `[IMPORTANT]`, `[WARNING]` & `[CAUTION]`.

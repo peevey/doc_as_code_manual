@@ -1,6 +1,7 @@
 = Berühmte Bauwerke Europas
 Max Mustermann <max.mustermann@hiq.de>
 :description: Eine Übersicht der berühmtesten Bauwerke Europas
+//:title-page:
 :toc:
 :toc-title: Inhaltsverzeichnis
 :sectnums:

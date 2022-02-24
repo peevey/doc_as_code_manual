@@ -1,1 +1,15 @@
 == Was sind vereinfachte Auszeichnungssprachen?
+
+Wahrscheinlich ist schon jeder einmal mit einer vereinfachten Auszeichnungssprache in Kontakt gekommen, ohne es zu bemerken; sei es beim Schreiben von Issues in Jira oder beim Formatieren einer Textnachricht in einem Messenger.
+
+Vereinfachte Auszeichnungssprachen (`lightweight markup languages`, bzw. `simple markup languages`) sind - wie der Name schon sagt – wie XML, HTML oder YML Markup-Languages. Der Fokus vereinfachter Auszeichnungssprachen liegt dabei auf einer besonders einfachen Syntax, die auch im Rohformat leicht zu lesen und zu schreiben ist, so dass sie in der Regel in jedem Text Editor (und in jeder IDE) komfortabel bearbeitet werden können.
+
+Die Konvertierung in die gewünschten Ausgabeformte wie HTML erfolgt grundsätzlich in einem zweiten Schritt, so dass der Fokus auf den Text und dessen Struktur gelegt werden kann.
+
+Bekannte vereinfachte Auszeichnungsprachen sind:
+
+* Asciidoc
+* Markdown
+* reStructuredText
+
+Im Rahmen dieses Tutorials werden wir uns `asciidoc` genauer anschauen.
